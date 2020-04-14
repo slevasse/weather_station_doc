@@ -6,19 +6,56 @@ repo_url: https://github.com/slevasse/weather_station_doc
 
 # ---–---–---–---–---–---–---–---–---–---–---–---–---–---–---–---–---–---–---–--
 theme:
-  # https://squidfunk.github.io/mkdocs-material/getting-started/#tabs
-  name: 'material'
-  # name: 'readthedocs'
-  custom_dir: 'theme'
+  name: material
   palette:
-    primary: 'blue grey'
-    accent: 'deep orange'
+    primary: 'light green'
+    accent: 'light blue'
   feature:
     tabs: true
+  icon:
+    logo: fontawesome/winter/snowplow
+    repo: fontawesome/brands/git-alt
   # Logo from: https://gitlab.cern.ch/acc-models/acc-models-www
-  logo: images/logo.png
-
+  #logo: fontawesome/brands/git-alt
+#
 extra_css:
   - 'stylesheets/extra.css'
   - https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css
+#
 
+# ---–---–---–---–---–---–---–---–---–---–---–---–---–---–---–---–---–---–---–--
+# https://squidfunk.github.io/mkdocs-material/extensions/pymdown/
+markdown_extensions:  
+  - markdown.extensions.attr_list
+  - markdown.extensions.admonition
+  - markdown.extensions.codehilite
+  - markdown.extensions.def_list
+  - pymdownx.arithmatex
+  - pymdownx.inlinehilite
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
+  - pymdownx.progressbar
+  - pymdownx.magiclink
+  - pymdownx.details
+
+# ---–---–---–---–---–---–---–---–---–---–---–---–---–---–---–---–---–---–---–--
+nav:
+  ###################################
+  - Home:
+    - Welcome: index.md
+    - Example Markdown: example-markdown.md
+    - Docs Information: docs-info.md
+  ###################################
+  - Node:
+    - Requirements and spec: node/node-requirement-specs.md 
+    - Hardware: node/node-hardware.md
+    - software: node/node-software.md
+  ###################################
+  - Server:
+    - Requirements and spec: server/server-requirement-specs.md 
+    - Hardware: server/server-hardware.md
+    - UDP server: server/udp-server.md
+    - Web server: server/web-server.md
