@@ -1,4 +1,24 @@
 site_name: Weather Station Project Documentation
+site_url: https://slevasse.github.io/weather_station_doc/
 
 repo_name: GitHub
 repo_url: https://github.com/slevasse/weather_station_doc
+
+# ---–---–---–---–---–---–---–---–---–---–---–---–---–---–---–---–---–---–---–--
+theme:
+  # https://squidfunk.github.io/mkdocs-material/getting-started/#tabs
+  name: 'material'
+  # name: 'readthedocs'
+  custom_dir: 'theme'
+  palette:
+    primary: 'blue grey'
+    accent: 'deep orange'
+  feature:
+    tabs: true
+  # Logo from: https://gitlab.cern.ch/acc-models/acc-models-www
+  logo: images/logo.png
+
+extra_css:
+  - 'stylesheets/extra.css'
+  - https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css
+
