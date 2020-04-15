@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://slevasse.github.io/weather_station_doc/node/node-software/">
+        <link rel="canonical" href="https://slevasse.github.io/weather_station_doc/node/city-node-requirement-specs/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>software - Weather Station Project Documentation</title>
+        <title>Requirements - Weather Station Project Documentation</title>
       
     
     
@@ -91,7 +91,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#node-software" tabindex="1" class="md-skip">
+      <a href="#node-requirement-and-specifications" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -117,7 +117,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                software
+                Requirements
               
             </span>
           
@@ -209,7 +209,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../node-requirement-specs/" class="md-tabs__link md-tabs__link--active">
+        <a href="./" class="md-tabs__link md-tabs__link--active">
           Node
         </a>
       
@@ -358,30 +358,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../node-requirement-specs/" title="Requirements and spec" class="md-nav__link">
-      Requirements and spec
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../node-hardware/" title="Hardware" class="md-nav__link">
-      Hardware
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -392,10 +368,178 @@
       
     
     
-    <a href="./" title="software" class="md-nav__link md-nav__link--active">
-      software
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Requirements
+      </label>
+    
+    <a href="./" title="Requirements" class="md-nav__link md-nav__link--active">
+      Requirements
     </a>
     
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#measurement-types" class="md-nav__link">
+    Measurement types
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-measurements" class="md-nav__link">
+    Base measurements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#air-measurements" class="md-nav__link">
+    Air measurements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cosmic-measurements" class="md-nav__link">
+    Cosmic measurements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ground-measurements" class="md-nav__link">
+    Ground measurements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mechanical-environemental" class="md-nav__link">
+    Mechanical &amp; environemental
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mki" class="md-nav__link">
+    MkI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkii" class="md-nav__link">
+    MkII
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operational" class="md-nav__link">
+    Operational
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mki_1" class="md-nav__link">
+    MkI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkii_1" class="md-nav__link">
+    MKII
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-interface" class="md-nav__link">
+    User interface
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mki_2" class="md-nav__link">
+    MkI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkii_2" class="md-nav__link">
+    MkII
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../city-node-hardware/" title="Hardware" class="md-nav__link">
+      Hardware
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../city-node-software/" title="software" class="md-nav__link">
+      software
+    </a>
   </li>
 
         
@@ -493,6 +637,137 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#measurement-types" class="md-nav__link">
+    Measurement types
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-measurements" class="md-nav__link">
+    Base measurements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#air-measurements" class="md-nav__link">
+    Air measurements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cosmic-measurements" class="md-nav__link">
+    Cosmic measurements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ground-measurements" class="md-nav__link">
+    Ground measurements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mechanical-environemental" class="md-nav__link">
+    Mechanical &amp; environemental
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mki" class="md-nav__link">
+    MkI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkii" class="md-nav__link">
+    MkII
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operational" class="md-nav__link">
+    Operational
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mki_1" class="md-nav__link">
+    MkI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkii_1" class="md-nav__link">
+    MKII
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-interface" class="md-nav__link">
+    User interface
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mki_2" class="md-nav__link">
+    MkI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkii_2" class="md-nav__link">
+    MkII
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -503,10 +778,124 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/slevasse/weather_station_doc/edit/master/docs/node/node-software.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/slevasse/weather_station_doc/edit/master/docs/node/city-node-requirement-specs.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="node-software">Node Software</h1>
+                <h1 id="node-requirement-and-specifications">Node Requirement and Specifications</h1>
+<p>These are given as a best effort based requirements. I will try to meet these but I will not stop the project if I fail to meet some.</p>
+<ul>
+<li>The concept of a node is defined as a simple "smart" environemental sensor.</li>
+<li>The node is connected to the server via a network (ethernet, bluetooth, LoRa..) to transmit its measurements.<ul>
+<li>In case of total or transcient absence of network connectivity, the measurements are logged onboard the node for later retransmition or manual recovery.</li>
+</ul>
+</li>
+<li>It can be either power autonomous (portable / remote area) or power dependant (places were power can be provided).</li>
+<li>To guaranty a wide spread deployement, the node shall be as cheap as possible, while maintaining a somewhat reliable system (no janky HW recup).</li>
+<li>The end goal is to have an autonomous sensor that can be used in hard environement (e.g. high montain). </li>
+</ul>
+<h2 id="measurement-types">Measurement types</h2>
+<p>The idea is to have a basic node that provide base measurements and a large panel of aditional measurements types to fit most users need.</p>
+<ul>
+<li>All measurements shall be timestamped (localy with GPS time standard).</li>
+</ul>
+<h3 id="base-measurements">Base measurements</h3>
+<p>The node shall measure the folowing environemental parameters:</p>
+<ul>
+<li>Air temperature in Kelvin (K)</li>
+<li>Air pressure in Pascal (Pa)</li>
+<li>Relative humidity in %</li>
+</ul>
+<h3 id="air-measurements">Air measurements</h3>
+<ul>
+<li>wind speed</li>
+<li>wind direction</li>
+<li>Particulate mater concentration in air<ul>
+<li>PM2.5 (2.5 um and smaller)</li>
+<li>PM10 (10 um and smaller)</li>
+</ul>
+</li>
+<li>Total volatile organic compound (Tvoc)</li>
+<li>Carbon dioxide (CO2) </li>
+<li>Ozone (O3)</li>
+<li>nitrogen dioxide (NO2)</li>
+<li>Caron monoxide (CO)</li>
+<li>Other gasses such as propane, butane etc... (for a potential kitchen monitoring system..)</li>
+<li>Radon </li>
+</ul>
+<h3 id="cosmic-measurements">Cosmic measurements</h3>
+<ul>
+<li>cosmic muons ? (just for fun)</li>
+</ul>
+<h3 id="ground-measurements">Ground measurements</h3>
+<ul>
+<li>Ground temperature</li>
+<li>Ground humidity</li>
+</ul>
+<h2 id="mechanical-environemental">Mechanical &amp; environemental</h2>
+<h3 id="mki">MkI</h3>
+<ul>
+<li>The size of the basic city node shall be within 90 x 60 x 30 mm3 (bit bigger than a <a href="https://www.raspberrypi.org/products/raspberry-pi-4-model-b/specifications/">RPi4</a>)</li>
+<li>The node shall be IP53 compliant<ul>
+<li>Somewhat Dust tight</li>
+<li>Rain proof</li>
+</ul>
+</li>
+<li>Mild shock/impact resistance (in case of accidental fall).</li>
+<li>Operational temperature range -20C to +60C.</li>
+<li>Operational rel humidity 0% to 85%. </li>
+<li>Not suited for marine environement</li>
+<li>Mild UV resistance</li>
+</ul>
+<h3 id="mkii">MkII</h3>
+<ul>
+<li>Maximum size 200 x 200 x 200 mm3</li>
+<li>IP67 compliant<ul>
+<li>Dust tight</li>
+<li>Water tight</li>
+</ul>
+</li>
+<li>Proper shock/impact resistance (in case of accidental fall in the montain).</li>
+<li>Ice proof</li>
+<li>Operational temperature range -40C to +60C.</li>
+<li>Operational rel humidity 0% to 85%. </li>
+<li>Altitude up to 5km</li>
+<li>Potential use close to shore </li>
+<li>Strong UV resistance</li>
+</ul>
+<h2 id="operational">Operational</h2>
+<h3 id="mki_1">MkI</h3>
+<ul>
+<li>Polling period 1 to 1440 min (24h)</li>
+<li>Low power in between measurements</li>
+<li>Power shall be provided from USB or other low voltage sources.<ul>
+<li>A battery powered version shall work for 1yr continuously.</li>
+</ul>
+</li>
+<li>All measurements are timestamped</li>
+<li>Capacity to keep track of time even in case of loss of power (RTC)</li>
+<li>Capacity to store up to 1yr of data onboard</li>
+</ul>
+<h3 id="mkii_1">MKII</h3>
+<p>Same as MKI plus:</p>
+<ul>
+<li>Battery powered for up to 3 months</li>
+<li>Solar powered</li>
+<li>System vitals are monitored along with the other environmental measurements </li>
+</ul>
+<h2 id="user-interface">User interface</h2>
+<h3 id="mki_2">MkI</h3>
+<ul>
+<li>On/off switch</li>
+<li>Some leds to give the state of the system</li>
+<li>Optional screen to give a live reading of the values</li>
+<li>Wake-up / force measurement push button (with a rate of max 0.1Hz)</li>
+</ul>
+<h3 id="mkii_2">MkII</h3>
+<ul>
+<li>on/off switch</li>
+<li>Some leds to give the state of the system</li>
+<li>Wake-up / force measurement push button (with a rate of max 0.1Hz)</li>
+</ul>
                 
                   
                 
@@ -528,7 +917,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../node-hardware/" title="Hardware" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../docs-info/" title="Docs Information" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -537,19 +926,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Hardware
+                Docs Information
               </span>
             </div>
           </a>
         
         
-          <a href="../../server/server-requirement-specs/" title="Requirements and spec" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../city-node-hardware/" title="Hardware" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Requirements and spec
+                Hardware
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

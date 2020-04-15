@@ -2,52 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://slevasse.github.io/weather_station_doc/</loc>
-     <lastmod>2020-04-14</lastmod>
+     <lastmod>2020-04-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://slevasse.github.io/weather_station_doc/example-markdown/</loc>
-     <lastmod>2020-04-14</lastmod>
+     <lastmod>2020-04-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://slevasse.github.io/weather_station_doc/docs-info/</loc>
-     <lastmod>2020-04-14</lastmod>
+     <lastmod>2020-04-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://slevasse.github.io/weather_station_doc/node/node-requirement-specs/</loc>
-     <lastmod>2020-04-14</lastmod>
+     <loc>https://slevasse.github.io/weather_station_doc/node/city-node-requirement-specs/</loc>
+     <lastmod>2020-04-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://slevasse.github.io/weather_station_doc/node/node-hardware/</loc>
-     <lastmod>2020-04-14</lastmod>
+     <loc>https://slevasse.github.io/weather_station_doc/node/city-node-hardware/</loc>
+     <lastmod>2020-04-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://slevasse.github.io/weather_station_doc/node/node-software/</loc>
-     <lastmod>2020-04-14</lastmod>
+     <loc>https://slevasse.github.io/weather_station_doc/node/city-node-software/</loc>
+     <lastmod>2020-04-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://slevasse.github.io/weather_station_doc/server/server-requirement-specs/</loc>
-     <lastmod>2020-04-14</lastmod>
+     <lastmod>2020-04-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://slevasse.github.io/weather_station_doc/server/server-hardware/</loc>
-     <lastmod>2020-04-14</lastmod>
+     <lastmod>2020-04-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://slevasse.github.io/weather_station_doc/server/udp-server/</loc>
-     <lastmod>2020-04-14</lastmod>
+     <lastmod>2020-04-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://slevasse.github.io/weather_station_doc/server/web-server/</loc>
-     <lastmod>2020-04-14</lastmod>
+     <lastmod>2020-04-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
