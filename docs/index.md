@@ -48,10 +48,11 @@ All of them are intended for city usage.
 
 ### Citizen efforts
 
+* [Hackair](https://www.hackair.eu/)
 * [Luftdaten](https://luftdaten.info/fr/accueil/) (Very similar to what I try to do, exept I want a more modular system..)
 * [aircarto](https://aircarto.fr/index.php) (Project seems frozen..)
 * [airboxlab](https://blog.airboxlab.com/)
-* 
+* [Sensebox](https://sensebox.kaufen/) (sort of for profit still..)
 
 ### For profit
 
