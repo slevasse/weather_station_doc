@@ -50,9 +50,9 @@ nav:
     - Docs Information: docs-info.md
   ###################################
   - Node:
-    - Requirements and spec: node/node-requirement-specs.md 
-    - Hardware: node/node-hardware.md
-    - software: node/node-software.md
+    - Requirements: node/city-node-requirement-specs.md
+    - Hardware: node/city-node-hardware.md
+    - software: node/city-node-software.md
   ###################################
   - Server:
     - Requirements and spec: server/server-requirement-specs.md 
