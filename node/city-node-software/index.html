@@ -392,9 +392,106 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        software
+      </label>
+    
     <a href="./" title="software" class="md-nav__link md-nav__link--active">
       software
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mk1-state-machine" class="md-nav__link">
+    MK1 State machine
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#states-description" class="md-nav__link">
+    States description
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#init-state-0" class="md-nav__link">
+    Init (state 0):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sleep-state-1" class="md-nav__link">
+    Sleep (state 1):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measure-state-2" class="md-nav__link">
+    Measure (state 2):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transmit-state-3" class="md-nav__link">
+    Transmit (state 3):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save-state-4" class="md-nav__link">
+    Save (state 4):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-state-5" class="md-nav__link">
+    Error (state 5):
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -493,6 +590,90 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mk1-state-machine" class="md-nav__link">
+    MK1 State machine
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#states-description" class="md-nav__link">
+    States description
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#init-state-0" class="md-nav__link">
+    Init (state 0):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sleep-state-1" class="md-nav__link">
+    Sleep (state 1):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measure-state-2" class="md-nav__link">
+    Measure (state 2):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transmit-state-3" class="md-nav__link">
+    Transmit (state 3):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save-state-4" class="md-nav__link">
+    Save (state 4):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-state-5" class="md-nav__link">
+    Error (state 5):
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -507,6 +688,38 @@
                 
                 
                 <h1 id="node-software">Node Software</h1>
+<ul>
+<li>The node software is written in C++.</li>
+<li>The node is controled by a simple state machine (see bellow).</li>
+</ul>
+<h2 id="mk1-state-machine">MK1 State machine</h2>
+<p><img alt="" src="../img/state_machine.png" style="width:70%" />
+  <p style="text-align: center;"><strong>Figure 1:</strong> Simple node state machine.</p></p>
+<h3 id="states-description">States description</h3>
+<h4 id="init-state-0">Init (state 0):</h4>
+<p>The state in which we initialise the system after powering-up.</p>
+<ul>
+<li>Read the config file in the external memory (SD card)</li>
+<li>Configure the system based on the config file<ul>
+<li>Set the wireless connection variable</li>
+<li>If the file/sd-card is absent trigger a config-file error and go to the error state. </li>
+</ul>
+</li>
+</ul>
+<h4 id="sleep-state-1">Sleep (state 1):</h4>
+<p>The state in which we sleep until it is time to measure.</p>
+<h4 id="measure-state-2">Measure (state 2):</h4>
+<p>The state in which we perfom the measurements.</p>
+<h4 id="transmit-state-3">Transmit (state 3):</h4>
+<p>The state in which we transmit the measured data to the server.</p>
+<h4 id="save-state-4">Save (state 4):</h4>
+<p>The state in which we save the measured data to the external memory.</p>
+<h4 id="error-state-5">Error (state 5):</h4>
+<p>The default state where we handle all systen breaking error detected by the system.
+For now i am not sure if I need this bbut well better safe than sorry...</p>
+<h3 id="implementation">Implementation</h3>
+<p>Pretty much stolen from <a href="https://aleksandrhovhannisyan.github.io/blog/dev/finite-state-machine-fsm-tutorial-implementing-an-fsm-in-c/">this</a> example.
+I guess I could have done it with just a 'switch', but I wanted to learn a OOP way of doing state machine, so I went for the aforementioned one.</p>
                 
                   
                 
