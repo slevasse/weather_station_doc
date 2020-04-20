@@ -1,0 +1,1266 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://slevasse.github.io/weather_station_doc/node/city-node-fsm-implementation/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>State machine implementation - Weather Station Project Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#7cb342">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="light-green" data-md-color-accent="light-blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#finite-state-machine-implementation" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://slevasse.github.io/weather_station_doc/" title="Weather Station Project Documentation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Weather Station Project Documentation
+            </span>
+            <span class="md-header-nav__topic">
+              
+                State machine implementation
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/slevasse/weather_station_doc/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../.." class="md-tabs__link">
+          Home
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../city-node-requirement-specs/" class="md-tabs__link md-tabs__link--active">
+          Node
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../server/server-requirement-specs/" class="md-tabs__link">
+          Server
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://slevasse.github.io/weather_station_doc/" title="Weather Station Project Documentation" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Weather Station Project Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/slevasse/weather_station_doc/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Home
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Home
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../example-markdown/" title="Example Markdown" class="md-nav__link">
+      Example Markdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docs-info/" title="Docs Information" class="md-nav__link">
+      Docs Information
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Node
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Node
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../city-node-requirement-specs/" title="Requirements" class="md-nav__link">
+      Requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../city-node-hardware/" title="Hardware overview" class="md-nav__link">
+      Hardware overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../city-node-software/" title="Software overview" class="md-nav__link">
+      Software overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        State machine implementation
+      </label>
+    
+    <a href="./" title="State machine implementation" class="md-nav__link md-nav__link--active">
+      State machine implementation
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    Sources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disclaimer" class="md-nav__link">
+    Disclaimer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#genericstate-class" class="md-nav__link">
+    GenericState class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemstates-classes" class="md-nav__link">
+    SystemStates classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finitestatemachine-class" class="md-nav__link">
+    FiniteStateMachine class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-code" class="md-nav__link">
+    Test code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+    
+    <label class="md-nav__link" for="nav-2-5">
+      State implementation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        State implementation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../city-node-init-state/" title="Init state" class="md-nav__link">
+      Init state
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../city-node-sleep-state/" title="Sleep state" class="md-nav__link">
+      Sleep state
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../city-node-measure-state/" title="Measure state" class="md-nav__link">
+      Measure state
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../city-node-transmit-state/" title="Transmit state" class="md-nav__link">
+      Transmit state
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../city-node-save-state/" title="Save state" class="md-nav__link">
+      Save state
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../city-node-error-state/" title="Error state" class="md-nav__link">
+      Error state
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Server
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Server
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../server/server-requirement-specs/" title="Requirements and spec" class="md-nav__link">
+      Requirements and spec
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../server/server-hardware/" title="Hardware" class="md-nav__link">
+      Hardware
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../server/udp-server/" title="UDP server" class="md-nav__link">
+      UDP server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../server/web-server/" title="Web server" class="md-nav__link">
+      Web server
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    Sources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disclaimer" class="md-nav__link">
+    Disclaimer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#genericstate-class" class="md-nav__link">
+    GenericState class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemstates-classes" class="md-nav__link">
+    SystemStates classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finitestatemachine-class" class="md-nav__link">
+    FiniteStateMachine class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-code" class="md-nav__link">
+    Test code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/slevasse/weather_station_doc/edit/master/docs/node/city-node-fsm-implementation.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="finite-state-machine-implementation">Finite state machine implementation</h1>
+<h2 id="sources">Sources</h2>
+<ul>
+<li>I have pretty much stolen the structure of the FSM from <a href="https://aleksandrhovhannisyan.github.io/blog/dev/finite-state-machine-fsm-tutorial-implementing-an-fsm-in-c/">this</a> example.
+Things were well explained and I could apply it to my project quickly.</li>
+</ul>
+<h2 id="implementation">Implementation</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is in no way a tutorial or something intended for people to reproduce this project.
+It iss only here for me to remember how I did things.</p>
+</div>
+<h3 id="disclaimer">Disclaimer</h3>
+<p>I could have done it in a much simpler way since, so far, all opperation are pretty much sequential.
+Thus I do not need a finite state machine to run the system.
+However, I will use this code as a base to expend on the system and it is quite sure that the complexity of things will increase.
+Moreover, I have never implemented a FSM in OOP style before and I thought this was a good opportunity.
+(This is why I implemented this OOP state machine).</p>
+<h3 id="overview">Overview</h3>
+<p>The FSM is a class which instanciate a new state object at each state transition.
+Each state object inherit from a generic state obbject. 
+There are five files in total.</p>
+<h3 id="genericstate-class">GenericState class</h3>
+<ul>
+<li>This class is a generic state used to create each state object.</li>
+<li>Contained in a single file <a href="https://github.com/slevasse/node-mki-firmware/blob/master/main/GenericState.h">GenericState.h</a></li>
+</ul>
+<p>The code:
+<div class="codehilite"><pre><span></span><span class="cp">#pragma once</span>
+<span class="cp">#include</span> <span class="cpf">&quot;FiniteStateMachine.h&quot;</span><span class="cp"></span>
+<span class="c1">// Abstract state class</span>
+
+<span class="c1">// Forward declaration to resolve circular dependency/include</span>
+<span class="k">class</span> <span class="nc">FiniteStateMachine</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">GenericState</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="k">virtual</span> <span class="kt">void</span> <span class="n">enter</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">toggle</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">exit</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">virtual</span> <span class="o">~</span><span class="n">GenericState</span><span class="p">()</span> <span class="p">{}</span>
+<span class="p">};</span>
+</pre></div></p>
+<ul>
+<li>The <code class="codehilite"><span class="err">enter</span></code> method is here to do things when we enter the state.<ul>
+<li>This is pretty much where all the work will go.</li>
+</ul>
+</li>
+<li>The <code class="codehilite"><span class="err">toggle</span></code> method is here to change state.<ul>
+<li>it is called once we are done working in this state.</li>
+</ul>
+</li>
+<li>The <code class="codehilite"><span class="err">exit</span></code> method is here to do things after we changed state.<ul>
+<li>I don't see a use for it now.. Perhaps some cleaning when needed.</li>
+</ul>
+</li>
+</ul>
+<h3 id="systemstates-classes">SystemStates classes</h3>
+<ul>
+<li>These files <a href="https://github.com/slevasse/node-mki-firmware/blob/master/main/SystemStates.h">SystemStates.h</a> / <a href="https://github.com/slevasse/node-mki-firmware/blob/master/main/SystemStates.cpp">SystemStates.cpp</a> contain the implementation of each state.</li>
+<li>Depending how busy each state will become, I might move them to their own files.</li>
+</ul>
+<p>SystemStates.h:
+<div class="codehilite"><pre><span></span><span class="cp">#pragma once</span>
+<span class="cp">#include</span> <span class="cpf">&quot;GenericState.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;FiniteStateMachine.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;Arduino.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;HardwareSerial.h&gt;</span><span class="cp"></span>
+
+<span class="k">class</span> <span class="nc">Initialise</span> <span class="o">:</span> <span class="k">public</span> <span class="n">GenericState</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="kt">void</span> <span class="n">enter</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">toggle</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">exit</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="k">static</span> <span class="n">GenericState</span><span class="o">&amp;</span> <span class="n">getInstance</span><span class="p">();</span>
+  <span class="kt">int</span> <span class="n">stateNumber</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Initialise</span><span class="p">()</span> <span class="p">{}</span>
+  <span class="n">Initialise</span><span class="p">(</span><span class="k">const</span> <span class="n">Initialise</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">);</span>
+  <span class="n">Initialise</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Initialise</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">);</span>
+<span class="p">};</span>
+
+
+<span class="k">class</span> <span class="nc">Sleep</span> <span class="o">:</span> <span class="k">public</span> <span class="n">GenericState</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="kt">void</span> <span class="n">enter</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">toggle</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">exit</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="k">static</span> <span class="n">GenericState</span><span class="o">&amp;</span> <span class="n">getInstance</span><span class="p">();</span>
+  <span class="kt">int</span> <span class="n">stateNumber</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Sleep</span><span class="p">()</span> <span class="p">{}</span>
+  <span class="n">Sleep</span><span class="p">(</span><span class="k">const</span> <span class="n">Sleep</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">);</span>
+  <span class="n">Sleep</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Sleep</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">);</span>
+<span class="p">};</span>
+
+
+<span class="k">class</span> <span class="nc">Measure</span> <span class="o">:</span> <span class="k">public</span> <span class="n">GenericState</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="kt">void</span> <span class="n">enter</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">toggle</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">exit</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="k">static</span> <span class="n">GenericState</span><span class="o">&amp;</span> <span class="n">getInstance</span><span class="p">();</span>
+  <span class="kt">int</span> <span class="n">stateNumber</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Measure</span><span class="p">()</span> <span class="p">{}</span>
+  <span class="n">Measure</span><span class="p">(</span><span class="k">const</span> <span class="n">Measure</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">);</span>
+  <span class="n">Measure</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Measure</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">);</span>
+<span class="p">};</span>
+
+
+<span class="k">class</span> <span class="nc">Transmit</span> <span class="o">:</span> <span class="k">public</span> <span class="n">GenericState</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="kt">void</span> <span class="n">enter</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">toggle</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">exit</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="k">static</span> <span class="n">GenericState</span><span class="o">&amp;</span> <span class="n">getInstance</span><span class="p">();</span>
+  <span class="kt">int</span> <span class="n">stateNumber</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Transmit</span><span class="p">()</span> <span class="p">{}</span>
+  <span class="n">Transmit</span><span class="p">(</span><span class="k">const</span> <span class="n">Transmit</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">);</span>
+  <span class="n">Transmit</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Transmit</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Save</span> <span class="o">:</span> <span class="k">public</span> <span class="n">GenericState</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="kt">void</span> <span class="n">enter</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">toggle</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">exit</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="k">static</span> <span class="n">GenericState</span><span class="o">&amp;</span> <span class="n">getInstance</span><span class="p">();</span>
+  <span class="kt">int</span> <span class="n">stateNumber</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Save</span><span class="p">()</span> <span class="p">{}</span>
+  <span class="n">Save</span><span class="p">(</span><span class="k">const</span> <span class="n">Save</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">);</span>
+  <span class="n">Save</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Save</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Error</span> <span class="o">:</span> <span class="k">public</span> <span class="n">GenericState</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="kt">void</span> <span class="n">enter</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">toggle</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">exit</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="k">static</span> <span class="n">GenericState</span><span class="o">&amp;</span> <span class="n">getInstance</span><span class="p">();</span>
+  <span class="kt">int</span> <span class="n">stateNumber</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Error</span><span class="p">()</span> <span class="p">{}</span>
+  <span class="n">Error</span><span class="p">(</span><span class="k">const</span> <span class="n">Error</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">);</span>
+  <span class="n">Error</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Error</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div></p>
+<ul>
+<li>I do not know why there is so many constructors (3/class). But I do not care, it works.</li>
+</ul>
+<p>SystemStates.cpp:
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;SystemStates.h&quot;</span><span class="cp"></span>
+
+<span class="c1">//==============================================================================</span>
+<span class="c1">// Initialise State</span>
+<span class="c1">//==============================================================================</span>
+<span class="kt">void</span> <span class="n">Initialise</span><span class="o">::</span><span class="n">toggle</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// change state from init to sleep</span>
+  <span class="c1">// for now I&#39;ll ignore the error state</span>
+  <span class="c1">// use the fsm object we passed to create an instance of the next state.</span>
+  <span class="n">fsm</span><span class="o">-&gt;</span><span class="n">setState</span><span class="p">(</span><span class="n">Sleep</span><span class="o">::</span><span class="n">getInstance</span><span class="p">());</span>
+<span class="p">}</span>
+
+
+<span class="n">GenericState</span><span class="o">&amp;</span> <span class="n">Initialise</span><span class="o">::</span><span class="n">getInstance</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="k">static</span> <span class="n">Initialise</span> <span class="n">singleton</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">singleton</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">Initialise</span><span class="o">::</span><span class="n">enter</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;entered Init state&quot;</span><span class="p">);</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//==============================================================================</span>
+<span class="c1">// Sleep State</span>
+<span class="c1">//==============================================================================</span>
+<span class="kt">void</span> <span class="n">Sleep</span><span class="o">::</span><span class="n">toggle</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// change state from sleep to measure</span>
+  <span class="c1">// for now I&#39;ll ignore the error state</span>
+  <span class="c1">// use the fsm object we passed to create an instance of the next state.</span>
+  <span class="n">fsm</span><span class="o">-&gt;</span><span class="n">setState</span><span class="p">(</span><span class="n">Measure</span><span class="o">::</span><span class="n">getInstance</span><span class="p">());</span>
+<span class="p">}</span>
+
+
+<span class="n">GenericState</span><span class="o">&amp;</span> <span class="n">Sleep</span><span class="o">::</span><span class="n">getInstance</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="k">static</span> <span class="n">Sleep</span> <span class="n">singleton</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">singleton</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">Sleep</span><span class="o">::</span><span class="n">enter</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;entered Sleep state&quot;</span><span class="p">);</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+  <span class="c1">//LowPower.sleep(4000); DOES NOT WORK</span>
+<span class="p">}</span>
+
+<span class="c1">//==============================================================================</span>
+<span class="c1">// Measure State</span>
+<span class="c1">//==============================================================================</span>
+<span class="kt">void</span> <span class="n">Measure</span><span class="o">::</span><span class="n">toggle</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// change state from measure to transmit</span>
+  <span class="c1">// for now I&#39;ll ignore the error state</span>
+  <span class="c1">// use the fsm object we passed to create an instance of the next state.</span>
+  <span class="n">fsm</span><span class="o">-&gt;</span><span class="n">setState</span><span class="p">(</span><span class="n">Transmit</span><span class="o">::</span><span class="n">getInstance</span><span class="p">());</span>
+<span class="p">}</span>
+
+
+<span class="n">GenericState</span><span class="o">&amp;</span> <span class="n">Measure</span><span class="o">::</span><span class="n">getInstance</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="k">static</span> <span class="n">Measure</span> <span class="n">singleton</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">singleton</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">Measure</span><span class="o">::</span><span class="n">enter</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;entered measure state&quot;</span><span class="p">);</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+<span class="c1">//==============================================================================</span>
+<span class="c1">// Transmit State</span>
+<span class="c1">//==============================================================================</span>
+<span class="kt">void</span> <span class="n">Transmit</span><span class="o">::</span><span class="n">toggle</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// change state from transmit to save</span>
+  <span class="c1">// for now I&#39;ll ignore the error state</span>
+  <span class="c1">// use the fsm object we passed to create an instance of the next state.</span>
+  <span class="n">fsm</span><span class="o">-&gt;</span><span class="n">setState</span><span class="p">(</span><span class="n">Save</span><span class="o">::</span><span class="n">getInstance</span><span class="p">());</span>
+<span class="p">}</span>
+
+
+<span class="n">GenericState</span><span class="o">&amp;</span> <span class="n">Transmit</span><span class="o">::</span><span class="n">getInstance</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="k">static</span> <span class="n">Transmit</span> <span class="n">singleton</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">singleton</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">Transmit</span><span class="o">::</span><span class="n">enter</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;entered transmit state&quot;</span><span class="p">);</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//==============================================================================</span>
+<span class="c1">// Save State</span>
+<span class="c1">//==============================================================================</span>
+<span class="kt">void</span> <span class="n">Save</span><span class="o">::</span><span class="n">toggle</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// change state from Save to sleep</span>
+  <span class="c1">// for now I&#39;ll ignore the error state</span>
+  <span class="c1">// use the fsm object we passed to create an instance of the next state.</span>
+  <span class="n">fsm</span><span class="o">-&gt;</span><span class="n">setState</span><span class="p">(</span><span class="n">Sleep</span><span class="o">::</span><span class="n">getInstance</span><span class="p">());</span>
+<span class="p">}</span>
+
+
+<span class="n">GenericState</span><span class="o">&amp;</span> <span class="n">Save</span><span class="o">::</span><span class="n">getInstance</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="k">static</span> <span class="n">Save</span> <span class="n">singleton</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">singleton</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">Save</span><span class="o">::</span><span class="n">enter</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;entered Save state&quot;</span><span class="p">);</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//==============================================================================</span>
+<span class="c1">// Error State</span>
+<span class="c1">//==============================================================================</span>
+<span class="kt">void</span> <span class="n">Error</span><span class="o">::</span><span class="n">toggle</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// change state from Save to sleep</span>
+  <span class="c1">// for now I&#39;ll ignore the error state</span>
+  <span class="c1">// use the fsm object we passed to create an instance of the next state.</span>
+  <span class="n">fsm</span><span class="o">-&gt;</span><span class="n">setState</span><span class="p">(</span><span class="n">Initialise</span><span class="o">::</span><span class="n">getInstance</span><span class="p">());</span>
+<span class="p">}</span>
+
+
+<span class="n">GenericState</span><span class="o">&amp;</span> <span class="n">Error</span><span class="o">::</span><span class="n">getInstance</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="k">static</span> <span class="n">Error</span> <span class="n">singleton</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">singleton</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">Error</span><span class="o">::</span><span class="n">enter</span><span class="p">(</span><span class="n">FiniteStateMachine</span><span class="o">*</span> <span class="n">fsm</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;entered error state&quot;</span><span class="p">);</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div></p>
+<ul>
+<li>This is just the squeleton, none of the actual work is perfomed in these class at the moment.</li>
+<li>The <code class="codehilite"><span class="err">toggle</span></code> method changes the state of the FinitStateMachine object it was instanciated into to the next state. It does so by passing a singleton of the next state class.<ul>
+<li>There we can add more decision making later..</li>
+<li>For now the transition is braindead.</li>
+</ul>
+</li>
+<li>The <code class="codehilite"><span class="err">getInstance</span></code> method instanciate a singleton of the state class and rerurns it.</li>
+<li>The <code class="codehilite"><span class="err">enter</span></code> method is filled with debug code. </li>
+</ul>
+<h3 id="finitestatemachine-class">FiniteStateMachine class</h3>
+<ul>
+<li>This class is the FSM and it glues all the state class together.</li>
+<li>It has two files <a href="https://github.com/slevasse/node-mki-firmware/blob/master/main/FiniteStateMachine.cpp">FiniteStateMachine.cpp</a> and <a href="https://github.com/slevasse/node-mki-firmware/blob/master/main/FiniteStateMachine.h">FiniteStateMachine.h</a>.</li>
+</ul>
+<p>FiniteStateMachine.h:
+<div class="codehilite"><pre><span></span><span class="cp">#pragma once</span>
+<span class="cp">#include</span> <span class="cpf">&quot;GenericState.h&quot;</span><span class="cp"></span>
+
+<span class="k">class</span> <span class="nc">GenericState</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">FiniteStateMachine</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="c1">// Constructor, init the state machine</span>
+  <span class="n">FiniteStateMachine</span><span class="p">();</span>  
+  <span class="c1">// toggle the state machine</span>
+  <span class="kt">void</span> <span class="nf">toggle</span><span class="p">();</span>
+  <span class="c1">// inline function to get the current state of the FSM</span>
+  <span class="kr">inline</span> <span class="n">GenericState</span><span class="o">*</span> <span class="nf">getCurrentState</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">currentState</span><span class="p">;</span> <span class="p">}</span>
+  <span class="c1">// Set the FSM state</span>
+  <span class="kt">void</span> <span class="nf">setState</span><span class="p">(</span><span class="n">GenericState</span><span class="o">&amp;</span> <span class="n">newState</span><span class="p">);</span>
+
+<span class="k">private</span><span class="o">:</span>
+  <span class="c1">// the fsm state</span>
+  <span class="n">GenericState</span><span class="o">*</span> <span class="n">currentState</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div></p>
+<p>FiniteStateMachine.cpp:</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;FiniteStateMachine.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;SystemStates.h&quot;</span><span class="cp"></span>
+
+<span class="n">FiniteStateMachine</span><span class="o">::</span><span class="n">FiniteStateMachine</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="c1">// All the system starts in the init state</span>
+  <span class="n">currentState</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">Initialise</span><span class="o">::</span><span class="n">getInstance</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">FiniteStateMachine</span><span class="o">::</span><span class="n">setState</span><span class="p">(</span><span class="n">GenericState</span><span class="o">&amp;</span> <span class="n">newState</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">currentState</span><span class="o">-&gt;</span><span class="n">exit</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>  <span class="c1">// do stuff before we change state</span>
+  <span class="n">currentState</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">newState</span><span class="p">;</span>
+  <span class="n">currentState</span><span class="o">-&gt;</span><span class="n">enter</span><span class="p">(</span><span class="k">this</span><span class="p">);</span> <span class="c1">// do stuff after we change state</span>
+<span class="p">}</span>
+
+<span class="c1">// ask the current state to change state</span>
+<span class="kt">void</span> <span class="n">FiniteStateMachine</span><span class="o">::</span><span class="n">toggle</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="c1">// Delegate the task of determining the next state to the current state</span>
+  <span class="n">currentState</span><span class="o">-&gt;</span><span class="n">toggle</span><span class="p">(</span><span class="k">this</span><span class="p">);</span> 
+<span class="p">}</span>
+</pre></div>
+
+<ul>
+<li>The constructor set the current state to the <code class="codehilite"><span class="err">initialise</span></code> state.</li>
+<li>The <code class="codehilite"><span class="err">setState</span></code> method calls the <code class="codehilite"><span class="err">exit</span></code> method of the current state, changes the state to the next one (which is passed as an argument by the previous state) and calls the <code class="codehilite"><span class="err">enter</span></code> method of the state we just entered.</li>
+<li>The <code class="codehilite"><span class="err">toggle</span></code> method is here to manualy request for the next state, it is used for debug.<ul>
+<li>We will most probably not need it later as, I guess, the state will call its <code class="codehilite"><span class="err">toggle</span></code> method y itself when it is done working (at the end of its <code class="codehilite"><span class="err">enter</span></code> method).</li>
+</ul>
+</li>
+</ul>
+<h3 id="test-code">Test code</h3>
+<p>This is the code I used to test the good function of the FSM.
+It just instanciates the FSM object, open a serial connection to my pc and toggle the states.</p>
+<p><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;FiniteStateMachine.h&quot;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="n">delayValue</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">;</span>
+<span class="n">FiniteStateMachine</span> <span class="n">f</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// initialize serial communication at 9600 bits per second:</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;start test&quot;</span><span class="p">);</span>
+  <span class="n">delay</span><span class="p">(</span><span class="n">delayValue</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="n">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// run the fsm forever</span>
+  <span class="n">fsm</span><span class="p">.</span><span class="n">toggle</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+This yeild the folowing serial print.
+<div class="codehilite"><pre><span></span><span class="mi">14</span><span class="o">:</span><span class="mi">13</span><span class="o">:</span><span class="mf">30.527</span> <span class="o">-&gt;</span> <span class="n">entered</span> <span class="n">Sleep</span> <span class="n">state</span>
+<span class="mi">14</span><span class="o">:</span><span class="mi">13</span><span class="o">:</span><span class="mf">32.504</span> <span class="o">-&gt;</span> <span class="n">entered</span> <span class="n">measure</span> <span class="n">state</span>
+<span class="mi">14</span><span class="o">:</span><span class="mi">13</span><span class="o">:</span><span class="mf">33.035</span> <span class="o">-&gt;</span> <span class="n">entered</span> <span class="n">transmit</span> <span class="n">state</span>
+<span class="mi">14</span><span class="o">:</span><span class="mi">13</span><span class="o">:</span><span class="mf">33.519</span> <span class="o">-&gt;</span> <span class="n">entered</span> <span class="n">Save</span> <span class="n">state</span>
+<span class="mi">14</span><span class="o">:</span><span class="mi">13</span><span class="o">:</span><span class="mf">34.011</span> <span class="o">-&gt;</span> <span class="n">entered</span> <span class="n">Sleep</span> <span class="n">state</span>
+<span class="mi">14</span><span class="o">:</span><span class="mi">13</span><span class="o">:</span><span class="mf">36.015</span> <span class="o">-&gt;</span> <span class="n">entered</span> <span class="n">measure</span> <span class="n">state</span>
+<span class="mi">14</span><span class="o">:</span><span class="mi">13</span><span class="o">:</span><span class="mf">36.502</span> <span class="o">-&gt;</span> <span class="n">entered</span> <span class="n">transmit</span> <span class="n">state</span>
+<span class="mi">14</span><span class="o">:</span><span class="mi">13</span><span class="o">:</span><span class="mf">37.022</span> <span class="o">-&gt;</span> <span class="n">entered</span> <span class="n">Save</span> <span class="n">state</span>
+<span class="mi">14</span><span class="o">:</span><span class="mi">13</span><span class="o">:</span><span class="mf">37.514</span> <span class="o">-&gt;</span> <span class="n">entered</span> <span class="n">Sleep</span> <span class="n">state</span>
+</pre></div>
+* The "init state" and "start test" messages are not displayed since it takes some time for the serial monitor to start.
+I am sure there is some way to fix that but I do not really care...</p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../city-node-software/" title="Software overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Software overview
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../city-node-init-state/" title="Init state" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Init state
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

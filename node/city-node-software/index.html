@@ -38,7 +38,7 @@
     
     
       
-        <title>software - Weather Station Project Documentation</title>
+        <title>Software overview - Weather Station Project Documentation</title>
       
     
     
@@ -117,7 +117,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                software
+                Software overview
               
             </span>
           
@@ -372,8 +372,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../city-node-hardware/" title="Hardware" class="md-nav__link">
-      Hardware
+    <a href="../city-node-hardware/" title="Hardware overview" class="md-nav__link">
+      Hardware overview
     </a>
   </li>
 
@@ -393,11 +393,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        software
+        Software overview
       </label>
     
-    <a href="./" title="software" class="md-nav__link md-nav__link--active">
-      software
+    <a href="./" title="Software overview" class="md-nav__link md-nav__link--active">
+      Software overview
     </a>
     
       
@@ -473,13 +473,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
-    Implementation
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -493,6 +486,114 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../city-node-fsm-implementation/" title="State machine implementation" class="md-nav__link">
+      State machine implementation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+    
+    <label class="md-nav__link" for="nav-2-5">
+      State implementation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        State implementation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../city-node-init-state/" title="Init state" class="md-nav__link">
+      Init state
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../city-node-sleep-state/" title="Sleep state" class="md-nav__link">
+      Sleep state
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../city-node-measure-state/" title="Measure state" class="md-nav__link">
+      Measure state
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../city-node-transmit-state/" title="Transmit state" class="md-nav__link">
+      Transmit state
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../city-node-save-state/" title="Save state" class="md-nav__link">
+      Save state
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../city-node-error-state/" title="Error state" class="md-nav__link">
+      Error state
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -656,13 +757,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
-    Implementation
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -688,9 +782,11 @@
                 
                 
                 <h1 id="node-software">Node Software</h1>
+<p><i class="fa fa-github-square fa-lg"></i> <a href="https://github.com/slevasse/node-mki-firmware">Link to the project repo</a></p>
 <ul>
 <li>The node software is written in C++.</li>
 <li>The node is controled by a simple state machine (see bellow).</li>
+<li>In the current state of the system, there no real need for a state machine since all operations are pretty much sequential with minimum branching.</li>
 </ul>
 <h2 id="mk1-state-machine">MK1 State machine</h2>
 <p><img alt="" src="../img/state_machine.png" style="width:70%" />
@@ -717,9 +813,6 @@
 <h4 id="error-state-5">Error (state 5):</h4>
 <p>The default state where we handle all systen breaking error detected by the system.
 For now i am not sure if I need this bbut well better safe than sorry...</p>
-<h3 id="implementation">Implementation</h3>
-<p>Pretty much stolen from <a href="https://aleksandrhovhannisyan.github.io/blog/dev/finite-state-machine-fsm-tutorial-implementing-an-fsm-in-c/">this</a> example.
-I guess I could have done it with just a 'switch', but I wanted to learn a OOP way of doing state machine, so I went for the aforementioned one.</p>
                 
                   
                 
@@ -741,7 +834,7 @@ I guess I could have done it with just a 'switch', but I wanted to learn a OOP w
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../city-node-hardware/" title="Hardware" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../city-node-hardware/" title="Hardware overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -750,19 +843,19 @@ I guess I could have done it with just a 'switch', but I wanted to learn a OOP w
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Hardware
+                Hardware overview
               </span>
             </div>
           </a>
         
         
-          <a href="../../server/server-requirement-specs/" title="Requirements and spec" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../city-node-fsm-implementation/" title="State machine implementation" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Requirements and spec
+                State machine implementation
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
