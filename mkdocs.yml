@@ -51,8 +51,16 @@ nav:
   ###################################
   - Node:
     - Requirements: node/city-node-requirement-specs.md
-    - Hardware: node/city-node-hardware.md
-    - software: node/city-node-software.md
+    - Hardware overview: node/city-node-hardware.md
+    - Software overview: node/city-node-software.md
+    - State machine implementation: node/city-node-fsm-implementation.md
+    - State implementation:
+      - Init state: node/city-node-init-state.md
+      - Sleep state: node/city-node-sleep-state.md
+      - Measure state: node/city-node-measure-state.md
+      - Transmit state: node/city-node-transmit-state.md
+      - Save state: node/city-node-save-state.md
+      - Error state: node/city-node-error-state.md
   ###################################
   - Server:
     - Requirements and spec: server/server-requirement-specs.md 

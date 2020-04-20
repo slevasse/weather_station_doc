@@ -1,6 +1,9 @@
 # Node Software
+<i class="fa fa-github-square fa-lg"></i> [Link to the project repo](https://github.com/slevasse/node-mki-firmware)
+
 * The node software is written in C++.
 * The node is controled by a simple state machine (see bellow).
+* In the current state of the system, there no real need for a state machine since all operations are pretty much sequential with minimum branching.
 
 
 ## MK1 State machine
@@ -31,7 +34,3 @@ The state in which we save the measured data to the external memory.
 #### Error (state 5):
 The default state where we handle all systen breaking error detected by the system.
 For now i am not sure if I need this bbut well better safe than sorry...
-
-### Implementation
-Pretty much stolen from [this](https://aleksandrhovhannisyan.github.io/blog/dev/finite-state-machine-fsm-tutorial-implementing-an-fsm-in-c/) example.
-I guess I could have done it with just a 'switch', but I wanted to learn a OOP way of doing state machine, so I went for the aforementioned one.
