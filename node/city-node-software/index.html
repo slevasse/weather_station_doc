@@ -798,21 +798,87 @@
 <li>Read the config file in the external memory (SD card)</li>
 <li>Configure the system based on the config file<ul>
 <li>Set the wireless connection variable</li>
+<li>Set the time intervall for the measurements</li>
+<li>etc...</li>
 <li>If the file/sd-card is absent trigger a config-file error and go to the error state. </li>
+</ul>
+</li>
+<li>Turn off the things we do not need.<ul>
+<li>e.g. the arduino nano iot has an IMU onboard, we do not need it.</li>
 </ul>
 </li>
 </ul>
 <h4 id="sleep-state-1">Sleep (state 1):</h4>
-<p>The state in which we sleep until it is time to measure.</p>
+<p>The state in which we sleep until it is time to measure.
+(Pretty self explanatory).
+When entered:</p>
+<ul>
+<li>Set an RTC alarm to wake up for the next measurement.<ul>
+<li>This will use the internal RTC and or the external one (not sure yet).</li>
+<li>I might rely on the internal one but also set the external one in case we loose power at some point and reset the system.<ul>
+<li>This would allow to keep the measure at a consistent interval. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Put the system into the lowest power mode imaginable.</li>
+<li>Not sure yet if I will wake-up put put to sleep everything here or not.</li>
+<li>I might also use the IMU to trigger extra measurements based on vibrartions<ul>
+<li>This could be cool to detect small quake or rock slide.</li>
+</ul>
+</li>
+</ul>
 <h4 id="measure-state-2">Measure (state 2):</h4>
-<p>The state in which we perfom the measurements.</p>
+<p>The state in which we perfom the enviromental measurements.
+We can also add some system state measurements.
+For each measurement: </p>
+<ul>
+<li>Turn-on the sensor.</li>
+<li>Wait some time to make sure the sensor is stable (can take several minutes).</li>
+<li>Get the measurement.</li>
+<li>Apply correction/calibration / do the computation needed to have the number we will transmit.</li>
+<li>Turn off the sensor.</li>
+</ul>
+<p>Some error handling:</p>
+<ul>
+<li>If problem, generate error code and or enter the error state.</li>
+</ul>
 <h4 id="transmit-state-3">Transmit (state 3):</h4>
 <p>The state in which we transmit the measured data to the server.</p>
+<ul>
+<li>Package the data to be transmited (to gain bandwith and time)<ul>
+<li>This can be a simple "squeeze" things into a single word rather than have one per measurement.</li>
+<li>Will be defined later...</li>
+</ul>
+</li>
+<li>Turn on the RF system (wifi, bluetooth, LoRa).</li>
+<li>Connect to the network.</li>
+<li>Get some network status data (RF signal strenght etc...).<ul>
+<li>This add to the system status measurements.</li>
+</ul>
+</li>
+<li>Connect to the server (Some sort of handshake would be nice).</li>
+<li>Transmit the data gathered in the previous state. (would be nice to have a transmition confirmation.)<ul>
+<li>This include the environemental data and system status data.</li>
+</ul>
+</li>
+<li>Turn off the RF.</li>
+</ul>
 <h4 id="save-state-4">Save (state 4):</h4>
 <p>The state in which we save the measured data to the external memory.</p>
+<ul>
+<li>Power up the SD card.</li>
+<li>Write the data to SD card with the .CSV format.<ul>
+<li>This might change if I see that .CSV takes too much room.</li>
+</ul>
+</li>
+<li>Power down the SD card.</li>
+</ul>
 <h4 id="error-state-5">Error (state 5):</h4>
-<p>The default state where we handle all systen breaking error detected by the system.
-For now i am not sure if I need this bbut well better safe than sorry...</p>
+<p>The default state where we handle all systen breaking error detected by the system.</p>
+<ul>
+<li>TO BE COMPLETED</li>
+</ul>
                 
                   
                 
