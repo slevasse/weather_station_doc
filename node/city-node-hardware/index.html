@@ -380,9 +380,119 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Hardware overview
+      </label>
+    
     <a href="./" title="Hardware overview" class="md-nav__link md-nav__link--active">
       Hardware overview
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prototyping" class="md-nav__link">
+    Prototyping
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcus" class="md-nav__link">
+    MCUs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arduinot-nano-iot" class="md-nav__link">
+    Arduinot nano IOT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodemcu-v3" class="md-nav__link">
+    NodeMCU V3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esp-wroom-32" class="md-nav__link">
+    ESP-WROOM-32
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensors" class="md-nav__link">
+    Sensors
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bme680" class="md-nav__link">
+    BME680
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ccs811" class="md-nav__link">
+    CCS811
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sds011" class="md-nav__link">
+    SDS011
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bom" class="md-nav__link">
+    BOM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -601,6 +711,103 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prototyping" class="md-nav__link">
+    Prototyping
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcus" class="md-nav__link">
+    MCUs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arduinot-nano-iot" class="md-nav__link">
+    Arduinot nano IOT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodemcu-v3" class="md-nav__link">
+    NodeMCU V3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esp-wroom-32" class="md-nav__link">
+    ESP-WROOM-32
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensors" class="md-nav__link">
+    Sensors
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bme680" class="md-nav__link">
+    BME680
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ccs811" class="md-nav__link">
+    CCS811
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sds011" class="md-nav__link">
+    SDS011
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bom" class="md-nav__link">
+    BOM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -615,7 +822,229 @@
                 
                 
                 <h1 id="node-hardware">Node Hardware</h1>
-<p>pm sensor is unreliable for RH &gt; 80% <a href="https://www.researchgate.net/publication/330544166_Performance_Assessment_of_a_Low-Cost_PM25_Sensor_for_a_near_Four-Month_Period_in_Oslo_Norway">paper</a> </p>
+<h2 id="prototyping">Prototyping</h2>
+<p>In order to develop the node firmware and server software I used a breadoard prototype.
+It is comprised of:</p>
+<ul>
+<li>Arduino nano IOT (see bellow)</li>
+<li>Some sensors (selected based on other similar projects.)<ul>
+<li>BME680</li>
+<li>CCS811</li>
+<li>SDS011</li>
+</ul>
+</li>
+<li>A SD card module + 16GB SD card<ul>
+<li>The sd card might be quite overkill but well it was cheap and I had no idea how much data I would need to store when I ordered...</li>
+</ul>
+</li>
+<li>A GPS module (GY-NEO6MV2)<ul>
+<li>Used for position measurement in a mobile system.</li>
+<li>Used for clock synchronisation in absence of internet access.</li>
+</ul>
+</li>
+<li>A small oled screen.<ul>
+<li>Used for debug and for user interface.</li>
+<li>Not strictly required from the requirements but I though it would be nice to see the measurement in real time.</li>
+</ul>
+</li>
+<li>A RTC module.<ul>
+<li>This was a it of a mistake since I forgot I could get the clock from the GPS...</li>
+</ul>
+</li>
+</ul>
+<h3 id="mcus">MCUs</h3>
+<p>I have three MCU for this prototype. 
+The reason is that I had a arduino nano on my desk.
+However, I want to make this into a cheap system and the arduino is FAR from cheap.
+Thus I went for a NodeMCU(ESP8266), which is quite a lot cheaper for similar specs.
+I also got its younger brother the ESP-WROOM-32 , a bit more expensive but with far more computation power + embedded bluetooth.
+I will start with the arduino and switch to the other when they get here...
+I would also like to try a few diferent MCU to see which hold best against cold temperature.</p>
+<h4 id="arduinot-nano-iot">Arduinot nano IOT</h4>
+<p>It is an arduino :) .</p>
+<ul>
+<li>SAMD21 Cortex®-M0+ 32bit low power ARM MCU<ul>
+<li><a href="https://content.arduino.cc/assets/mkr-microchip_samd21_family_full_datasheet-ds40001882d.pdf">Datasheet</a></li>
+</ul>
+</li>
+<li>RF: u-blox NINA-W102<ul>
+<li><a href="https://content.arduino.cc/assets/Arduino_NINA-W10_DataSheet_%28UBX-17065507%29.pdf">Datasheet</a></li>
+</ul>
+</li>
+<li>IMU: LSM6DS3<ul>
+<li><a href="https://content.arduino.cc/assets/st_imu_lsm6ds3_datasheet.pdf">Datasheet</a></li>
+</ul>
+</li>
+<li>Crypto: ATECC608A<ul>
+<li><a href="https://content.arduino.cc/assets/microchip_atecc608a_cryptoauthentication_device_summary_datasheet-DS40001977B.pdf">Datasheet</a></li>
+</ul>
+</li>
+</ul>
+<p><img alt=" " src="https://content.arduino.cc/assets/Pinout-NANO33IoT_latest.png" /></p>
+<h4 id="nodemcu-v3">NodeMCU V3</h4>
+<p>It not an arduino :) .</p>
+<ul>
+<li>ESP8266 does it all.<ul>
+<li><a href="https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf">Datasheet</a></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="../img/NodeMCU_pinout.png" /></p>
+<h4 id="esp-wroom-32">ESP-WROOM-32</h4>
+<ul>
+<li><a href="https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32d_esp32-wroom-32u_datasheet_en.pdf">Datasheet</a>
+<img alt="" src="../img/esp32.jpg" /></li>
+</ul>
+<h3 id="sensors">Sensors</h3>
+<h4 id="bme680">BME680</h4>
+<p>Primary sensor of the system.
+This guy could be replaced by a BME280 to cut cost (if the air quality measurement is deamed useless).</p>
+<ul>
+<li>
+<p>Sense:</p>
+<ul>
+<li>Index of air quality (IAQ) from 0 to 500. (If I find some code to compute it...)</li>
+<li>Temperature from -40 °C to 86 °C ±1 °C.</li>
+<li>Pressure from 300 to 1100 hPa ±0.6 hPa.</li>
+<li>humidity from 0 to 100 %r.H ±3 %r.H.<ul>
+<li>Valid for 0°C to 65°C.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme680-ds001.pdf">Datasheet</a></p>
+</li>
+</ul>
+<h4 id="ccs811">CCS811</h4>
+<ul>
+<li>Sense:<ul>
+<li>equivalent CO2 (eCO2) from 400ppm up to 29206ppm.</li>
+<li>equivalent Total Volatile Organic Compound (eTVOC) from 0ppb up to 32768ppb.</li>
+<li>Can include a temperature and humidity compensation.</li>
+</ul>
+</li>
+<li><a href="https://www.mouser.fr/datasheet/2/588/CCS811_DS000459_7-00-1594304.pdf">Datasheet</a></li>
+</ul>
+<h4 id="sds011">SDS011</h4>
+<p>Particulate matter sensor.</p>
+<ul>
+<li>Sense:  <ul>
+<li>PM2.5 and PM10 from 0.0-999.9 μg/m3</li>
+<li><strong>Unreliable for RH &gt; 80% &rarr;<a href="https://www.researchgate.net/publication/330544166_Performance_Assessment_of_a_Low-Cost_PM25_Sensor_for_a_near_Four-Month_Period_in_Oslo_Norway">paper</a></strong></li>
+</ul>
+</li>
+<li><a href="https://cdn-reichelt.de/documents/datenblatt/X200/SDS011-DATASHEET.pdf">Datasheet</a></li>
+</ul>
+<h3 id="bom">BOM</h3>
+<ul>
+<li>In hindsight I totaly got ripped-off for the shipping of the RTC module. (I noticed it when doing this doc.)</li>
+<li>The total might be a bit off I rounded some values. </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Part Name</th>
+<th>Type</th>
+<th>Unit Price (€)</th>
+<th>Shipping cost (€)</th>
+<th>Merchant</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arduino nano IOT</td>
+<td>MCU</td>
+<td>18 + 4.15</td>
+<td>5.5</td>
+<td><a href="https://store.arduino.cc/arduino-nano-33-iot-with-headers">arduino store</a></td>
+</tr>
+<tr>
+<td>NodeMcu V3</td>
+<td>MCU</td>
+<td>1.92</td>
+<td>0.6</td>
+<td><a href="https://fr.aliexpress.com/item/32665100123.html?spm=a2g0s.9042311.0.0.27426c37SSNlwU">aliexpress</a></td>
+</tr>
+<tr>
+<td>ESP-WROOM-32</td>
+<td>MCU</td>
+<td>3.5</td>
+<td>2</td>
+<td><a href="https://fr.aliexpress.com/item/32665100123.html?spm=a2g0s.9042311.0.0.27426c37SSNlwU">aliexpress</a></td>
+</tr>
+<tr>
+<td>WAVGAT GY-NEO6MV2</td>
+<td>GPS module</td>
+<td>2.92</td>
+<td>0.5</td>
+<td><a href="https://fr.aliexpress.com/item/32836015224.html?spm=a2g0s.9042311.0.0.27426c37SSNlwU">aliexpress</a></td>
+</tr>
+<tr>
+<td>WAVGAT Micro-SD card</td>
+<td>SD card module</td>
+<td>0.36</td>
+<td>0.5</td>
+<td><a href="https://fr.aliexpress.com/item/32523546123.html?spm=a2g0s.9042311.0.0.27426c37SSNlwU">aliexpress</a></td>
+</tr>
+<tr>
+<td>DS3231 AT24C32 IIC</td>
+<td>RTC module</td>
+<td>0.92</td>
+<td>4</td>
+<td><a href="https://fr.aliexpress.com/item/2037934408.html?spm=a2g0s.9042311.0.0.27426c37SSNlwU">aliexpress</a></td>
+</tr>
+<tr>
+<td>Nova PM SDS011</td>
+<td>PM sensor</td>
+<td>17.38</td>
+<td>0</td>
+<td><a href="https://fr.aliexpress.com/item/32617788139.html?spm=a2g0s.9042311.0.0.27426c37SSNlwU">aliexpress</a></td>
+</tr>
+<tr>
+<td>BME680</td>
+<td>TPH + gas sensor</td>
+<td>7.84</td>
+<td>2</td>
+<td><a href="https://fr.aliexpress.com/item/32961416338.html?spm=a2g0s.9042311.0.0.27426c37SSNlwU">aliexpress</a></td>
+</tr>
+<tr>
+<td>CCS811</td>
+<td>tcov/eCO2 sensor</td>
+<td>5.27</td>
+<td>2</td>
+<td><a href="https://fr.aliexpress.com/item/33058004405.html?spm=a2g0s.9042311.0.0.27426c37SSNlwU">aliexpress</a></td>
+</tr>
+<tr>
+<td>SanDisk A1 16GB</td>
+<td>16GB SD card</td>
+<td>3.5</td>
+<td>1</td>
+<td><a href="https://fr.aliexpress.com/item/32984767921.html?spm=a2g0s.9042311.0.0.27426c37SSNlwU">aliexpress</a></td>
+</tr>
+<tr>
+<td>0.96" oled screen</td>
+<td>oled screen</td>
+<td>1.6</td>
+<td>0.9</td>
+<td><a href="https://fr.aliexpress.com/item/32896971385.html?spm=a2g0s.9042311.0.0.27426c37SSNlwU">aliexpress</a></td>
+</tr>
+<tr>
+<td>USB charger 10W</td>
+<td>USB charger</td>
+<td>0.96</td>
+<td>0.7</td>
+<td><a href="https://fr.aliexpress.com/item/33047898868.html?spm=a2g0s.9042311.0.0.27426c37SSNlwU">aliexpress</a></td>
+</tr>
+<tr>
+<td>Total</td>
+<td></td>
+<td>67.86</td>
+<td>19.2</td>
+<td></td>
+</tr>
+</tbody>
+</table>
                 
                   
                 
