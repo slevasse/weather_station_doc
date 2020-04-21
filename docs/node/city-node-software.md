@@ -20,6 +20,7 @@ The state in which we initialise the system after powering-up.
 	* Set the time intervall for the measurements
 	* etc...
 	* If the file/sd-card is absent trigger a config-file error and go to the error state. 
+* Get the current time from a time server
 * Turn off the things we do not need.
 	* e.g. the arduino nano iot has an IMU onboard, we do not need it.
 
