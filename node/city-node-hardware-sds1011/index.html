@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://slevasse.github.io/weather_station_doc/node/city-node-requirement-specs/">
+        <link rel="canonical" href="https://slevasse.github.io/weather_station_doc/node/city-node-hardware-sds1011/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>Requirements - Weather Station Project Documentation</title>
+        <title>SDS1011 - Weather Station Project Documentation</title>
       
     
     
@@ -91,7 +91,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#node-requirement-and-specifications" tabindex="1" class="md-skip">
+      <a href="#sds1011" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -117,7 +117,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Requirements
+                SDS1011
               
             </span>
           
@@ -209,7 +209,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="./" class="md-tabs__link md-tabs__link--active">
+        <a href="../city-node-requirement-specs/" class="md-tabs__link md-tabs__link--active">
           Node
         </a>
       
@@ -358,164 +358,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Requirements
-      </label>
-    
-    <a href="./" title="Requirements" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../city-node-requirement-specs/" title="Requirements" class="md-nav__link">
       Requirements
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#measurement-types" class="md-nav__link">
-    Measurement types
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#base-measurements" class="md-nav__link">
-    Base measurements
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#air-measurements" class="md-nav__link">
-    Air measurements
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cosmic-measurements" class="md-nav__link">
-    Cosmic measurements
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ground-measurements" class="md-nav__link">
-    Ground measurements
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mechanical-environemental" class="md-nav__link">
-    Mechanical &amp; environemental
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mki" class="md-nav__link">
-    MkI
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mkii" class="md-nav__link">
-    MkII
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operational" class="md-nav__link">
-    Operational
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mki_1" class="md-nav__link">
-    MkI
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mkii_1" class="md-nav__link">
-    MKII
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#user-interface" class="md-nav__link">
-    User interface
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mki_2" class="md-nav__link">
-    MkI
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mkii_2" class="md-nav__link">
-    MkII
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -535,10 +382,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
     
     <label class="md-nav__link" for="nav-2-3">
       Modules
@@ -554,11 +403,76 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../city-node-hardware-sds1011/" title="SDS1011" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        SDS1011
+      </label>
+    
+    <a href="./" title="SDS1011" class="md-nav__link md-nav__link--active">
       SDS1011
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#technical-specs" class="md-nav__link">
+    Technical specs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#work-environement" class="md-nav__link">
+    Work environement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power" class="md-nav__link">
+    Power:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#library" class="md-nav__link">
+    Library
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -785,37 +699,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#measurement-types" class="md-nav__link">
-    Measurement types
+  <a href="#technical-specs" class="md-nav__link">
+    Technical specs
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#base-measurements" class="md-nav__link">
-    Base measurements
+  <a href="#work-environement" class="md-nav__link">
+    Work environement
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#air-measurements" class="md-nav__link">
-    Air measurements
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cosmic-measurements" class="md-nav__link">
-    Cosmic measurements
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ground-measurements" class="md-nav__link">
-    Ground measurements
+  <a href="#power" class="md-nav__link">
+    Power:
   </a>
   
 </li>
@@ -826,83 +726,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mechanical-environemental" class="md-nav__link">
-    Mechanical &amp; environemental
+  <a href="#library" class="md-nav__link">
+    Library
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mki" class="md-nav__link">
-    MkI
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mkii" class="md-nav__link">
-    MkII
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operational" class="md-nav__link">
-    Operational
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mki_1" class="md-nav__link">
-    MkI
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mkii_1" class="md-nav__link">
-    MKII
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#user-interface" class="md-nav__link">
-    User interface
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mki_2" class="md-nav__link">
-    MkI
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mkii_2" class="md-nav__link">
-    MkII
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -922,124 +748,133 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/slevasse/weather_station_doc/edit/master/docs/node/city-node-requirement-specs.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/slevasse/weather_station_doc/edit/master/docs/node/city-node-hardware-sds1011.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="node-requirement-and-specifications">Node Requirement and Specifications</h1>
-<p>These are given as a best effort based requirements. I will try to meet these but I will not stop the project if I fail to meet some.</p>
+                <h1 id="sds1011">SDS1011</h1>
+<h2 id="technical-specs">Technical specs</h2>
+<p>Particulate matter sensor.</p>
 <ul>
-<li>The concept of a node is defined as a simple "smart" environemental sensor.</li>
-<li>The node is connected to the server via a network (ethernet, bluetooth, LoRa..) to transmit its measurements.<ul>
-<li>In case of total or transcient absence of network connectivity, the measurements are logged onboard the node for later retransmition or manual recovery.</li>
+<li>Sense:  <ul>
+<li>PM2.5 and PM10 from 0.0-999.9 μg/m3</li>
+<li>Error @ 25 °C and 50 %r.h: Max 15 % and 10 μg/m3</li>
+<li><strong>Unreliable for RH &gt; 80% &rarr;<a href="https://www.researchgate.net/publication/330544166_Performance_Assessment_of_a_Low-Cost_PM25_Sensor_for_a_near_Four-Month_Period_in_Oslo_Norway">paper</a></strong></li>
 </ul>
 </li>
-<li>It can be either power autonomous (portable / remote area) or power dependant (places were power can be provided).</li>
-<li>To guaranty a wide spread deployement, the node shall be as cheap as possible, while maintaining a somewhat reliable system (no janky HW recup).</li>
-<li>The end goal is to have an autonomous sensor that can be used in hard environement (e.g. high montain). </li>
+<li><a href="https://cdn-reichelt.de/documents/datenblatt/X200/SDS011-DATASHEET.pdf">Datasheet</a></li>
+<li>Library before tweek for samd21 arduino -&gt; <a href="https://github.com/Silvan85/Nova_SDS011">link</a></li>
 </ul>
-<h2 id="measurement-types">Measurement types</h2>
-<p>The idea is to have a basic node that provide base measurements and a large panel of aditional measurements types to fit most users need.</p>
+<h3 id="work-environement">Work environement</h3>
 <ul>
-<li>All measurements shall be timestamped (localy with GPS time standard).</li>
-</ul>
-<h3 id="base-measurements">Base measurements</h3>
-<p>The node shall measure the folowing environemental parameters:</p>
-<ul>
-<li>Air temperature in Kelvin (K)</li>
-<li>Air pressure in Pascal (Pa)</li>
-<li>Relative humidity in %</li>
-</ul>
-<h3 id="air-measurements">Air measurements</h3>
-<ul>
-<li>wind speed</li>
-<li>wind direction</li>
-<li>Particulate mater concentration in air<ul>
-<li>PM2.5 (2.5 um and smaller)</li>
-<li>PM10 (10 um and smaller)</li>
+<li>Air pressure: 86 kPa to 110 kPa</li>
+<li>Humidity<ul>
+<li>Storage: 0 %r.h to 90 %r.h</li>
+<li>Operation: &lt; 70 %r.h</li>
 </ul>
 </li>
-<li>Total volatile organic compound (Tvoc)</li>
-<li>Carbon dioxide (CO2) </li>
-<li>Ozone (O3)</li>
-<li>nitrogen dioxide (NO2)</li>
-<li>Caron monoxide (CO)</li>
-<li>Other gasses such as propane, butane etc... (for a potential kitchen monitoring system..)</li>
-<li>Radon </li>
-</ul>
-<h3 id="cosmic-measurements">Cosmic measurements</h3>
-<ul>
-<li>cosmic muons ? (just for fun)</li>
-</ul>
-<h3 id="ground-measurements">Ground measurements</h3>
-<ul>
-<li>Ground temperature</li>
-<li>Ground humidity</li>
-</ul>
-<h2 id="mechanical-environemental">Mechanical &amp; environemental</h2>
-<h3 id="mki">MkI</h3>
-<ul>
-<li>The size of the basic city node shall be within 90 x 60 x 30 mm3 (bit bigger than a <a href="https://www.raspberrypi.org/products/raspberry-pi-4-model-b/specifications/">RPi4</a>)</li>
-<li>The node shall be IP53 compliant<ul>
-<li>Somewhat Dust tight</li>
-<li>Rain proof</li>
+<li>Temperature<ul>
+<li>Storage: -20 °C to 60 °C</li>
+<li>Operation: -10 °C to 50 °C</li>
 </ul>
 </li>
-<li>Mild shock/impact resistance (in case of accidental fall).</li>
-<li>Operational temperature range -20C to +60C.</li>
-<li>Operational rel humidity 0% to 85%. </li>
-<li>Not suited for marine environement</li>
-<li>Mild UV resistance</li>
 </ul>
-<h3 id="mkii">MkII</h3>
+<h3 id="power">Power:</h3>
 <ul>
-<li>Maximum size 200 x 200 x 200 mm3</li>
-<li>IP67 compliant<ul>
-<li>Dust tight</li>
-<li>Water tight</li>
+<li>Operation voltage: 5 V </li>
+<li>Current<ul>
+<li>Active: 70 mA ± 10 mA (300 mW to 400mW (avg 350 mW))</li>
+<li>Sleep: &lt; 4 mA (&lt; 20 mW)</li>
 </ul>
 </li>
-<li>Proper shock/impact resistance (in case of accidental fall in the montain).</li>
-<li>Ice proof</li>
-<li>Operational temperature range -40C to +60C.</li>
-<li>Operational rel humidity 0% to 85%. </li>
-<li>Altitude up to 5km</li>
-<li>Potential use close to shore </li>
-<li>Strong UV resistance</li>
 </ul>
-<h2 id="operational">Operational</h2>
-<h3 id="mki_1">MkI</h3>
-<ul>
-<li>Polling period 1 to 1440 min (24h)</li>
-<li>Low power in between measurements</li>
-<li>Power shall be provided from USB or other low voltage sources.<ul>
-<li>A battery powered version shall work for 1yr continuously.</li>
-</ul>
-</li>
-<li>All measurements are timestamped</li>
-<li>Capacity to keep track of time even in case of loss of power (RTC)</li>
-<li>Capacity to store up to 1yr of data onboard</li>
-</ul>
-<h3 id="mkii_1">MKII</h3>
-<p>Same as MKI plus:</p>
-<ul>
-<li>Battery powered for up to 3 months</li>
-<li>Solar powered</li>
-<li>System vitals are monitored along with the other environmental measurements </li>
-</ul>
-<h2 id="user-interface">User interface</h2>
-<h3 id="mki_2">MkI</h3>
-<ul>
-<li>On/off switch</li>
-<li>Some leds to give the state of the system</li>
-<li>Optional screen to give a live reading of the values</li>
-<li>Wake-up / force measurement push button (with a rate of max 0.1Hz)</li>
-</ul>
-<h3 id="mkii_2">MkII</h3>
-<ul>
-<li>on/off switch</li>
-<li>Some leds to give the state of the system</li>
-<li>Wake-up / force measurement push button (with a rate of max 0.1Hz)</li>
-</ul>
+<h2 id="library">Library</h2>
+<p>I wanted a complete library, however I could not find one that would work natively for the arduino nano IOT.
+Therefore, I took the one from Radoslaw Orecki and modified it a bit.
+I simply modified the constructor and removed the <code class="codehilite"><span class="err">begin</span></code> method from the class.
+Also I commented the <code class="codehilite"><span class="cp">#include</span> <span class="cpf">&lt;SoftwareSerial.h&gt;</span><span class="cp"></span></code> in the .h file. 
+Instead of forking the project I just copied it and directly use the modified files in my project.</p>
+<p>New constructor:
+<div class="codehilite"><pre><span></span><span class="c1">// .h file</span>
+<span class="n">SDS011SW</span><span class="p">(</span><span class="n">Stream</span><span class="o">*</span> <span class="n">serial</span><span class="p">);</span>
+
+<span class="c1">// .cpp file</span>
+
+<span class="n">SDS011SW</span><span class="o">::</span><span class="n">SDS011SW</span><span class="p">(</span><span class="n">Stream</span><span class="o">*</span> <span class="n">serial</span><span class="p">){</span>
+  <span class="n">_sdsSerial</span> <span class="o">=</span> <span class="n">serial</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div></p>
+<p>Exemple of usage:
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;sds1011_sw.h&quot;</span><span class="cp"></span>
+
+<span class="c1">// instanciate the object</span>
+<span class="n">SDS011SW</span> <span class="nf">sds011</span><span class="p">(</span><span class="o">&amp;</span><span class="n">Serial1</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span> <span class="c1">// Output to Serial at 9600 baud</span>
+  <span class="c1">// give some time for the serial monitor to pop</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">5000</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;START&quot;</span><span class="p">);</span>
+  <span class="c1">// start the uart</span>
+  <span class="n">Serial1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+
+  <span class="c1">// Set the device id to 0xFFFF (optional)</span>
+  <span class="c1">//sds011.setDeviceID(0xFFFF);</span>
+
+  <span class="c1">// Set to query mode</span>
+  <span class="n">sds011</span><span class="p">.</span><span class="n">setDataReportingMode</span><span class="p">(</span><span class="n">DataReportingMode</span><span class="o">::</span><span class="n">query</span><span class="p">);</span>
+
+  <span class="c1">// Set to continuous working</span>
+  <span class="n">sds011</span><span class="p">.</span><span class="n">setDutyCycle</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+  <span class="c1">//Set the device to sleep</span>
+  <span class="n">sds011</span><span class="p">.</span><span class="n">setWorkingMode</span><span class="p">(</span><span class="n">WorkingMode</span><span class="o">::</span><span class="n">sleep</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Loop&quot;</span><span class="p">);</span>
+  <span class="kt">float</span> <span class="n">p25</span><span class="p">,</span> <span class="n">p10</span><span class="p">;</span>
+  <span class="c1">// turn on the sensor</span>
+  <span class="n">sds011</span><span class="p">.</span><span class="n">setWorkingMode</span><span class="p">(</span><span class="n">WorkingMode</span><span class="o">::</span><span class="n">work</span><span class="p">);</span>
+  <span class="c1">//wait for 30 second</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">30000</span><span class="p">);</span>
+  <span class="c1">// query data</span>
+  <span class="n">QuerryError</span> <span class="n">error_type</span> <span class="o">=</span> <span class="n">sds011</span><span class="p">.</span><span class="n">queryData</span><span class="p">(</span><span class="n">p25</span><span class="p">,</span> <span class="n">p10</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">error_type</span> <span class="o">==</span> <span class="n">QuerryError</span><span class="o">::</span><span class="n">no_error</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;no error&quot;</span><span class="p">);</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="n">millis</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;s:PM2.5=&quot;</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">p25</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;, PM10=&quot;</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">p10</span><span class="p">));</span>
+  <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">error_type</span> <span class="o">==</span> <span class="n">QuerryError</span><span class="o">::</span><span class="n">no_new_data</span><span class="p">){</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;No new data&quot;</span><span class="p">);</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="n">millis</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;s:PM2.5=&quot;</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">p25</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;, PM10=&quot;</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">p10</span><span class="p">));</span>
+  <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">error_type</span> <span class="o">==</span> <span class="n">QuerryError</span><span class="o">::</span><span class="n">response_error</span><span class="p">){</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;response_error&quot;</span><span class="p">);</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="n">millis</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;s:PM2.5=&quot;</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">p25</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;, PM10=&quot;</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">p10</span><span class="p">));</span>
+  <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">error_type</span> <span class="o">==</span> <span class="n">QuerryError</span><span class="o">::</span><span class="n">call_to_often</span><span class="p">){</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;call_to_often&quot;</span><span class="p">);</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="n">millis</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;s:PM2.5=&quot;</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">p25</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;, PM10=&quot;</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">p10</span><span class="p">));</span>
+  <span class="p">}</span>
+  <span class="c1">// turn off the sensor</span>
+  <span class="n">sds011</span><span class="p">.</span><span class="n">setWorkingMode</span><span class="p">(</span><span class="n">WorkingMode</span><span class="o">::</span><span class="n">sleep</span><span class="p">);</span>
+  <span class="c1">// wait 30 seconds</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">30000</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div></p>
+<p>Output from the serial monitor
+<div class="codehilite"><pre><span></span><span class="mi">17</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mf">08.106</span> <span class="o">-&gt;</span> <span class="n">START</span>
+<span class="mi">17</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mf">11.157</span> <span class="o">-&gt;</span> <span class="n">Loop</span>
+<span class="mi">17</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mf">41.322</span> <span class="o">-&gt;</span> <span class="n">no</span> <span class="n">error</span>
+<span class="mi">17</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mf">41.322</span> <span class="o">-&gt;</span> <span class="mi">38</span><span class="n">s</span><span class="o">:</span><span class="n">PM2</span><span class="o">.</span><span class="mi">5</span><span class="o">=</span><span class="mf">2.40</span><span class="o">,</span> <span class="n">PM10</span><span class="o">=</span><span class="mf">4.80</span>
+<span class="mi">17</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">11.430</span> <span class="o">-&gt;</span> <span class="n">Loop</span>
+<span class="mi">17</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">41.671</span> <span class="o">-&gt;</span> <span class="n">no</span> <span class="n">error</span>
+<span class="mi">17</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">41.671</span> <span class="o">-&gt;</span> <span class="mi">98</span><span class="n">s</span><span class="o">:</span><span class="n">PM2</span><span class="o">.</span><span class="mi">5</span><span class="o">=</span><span class="mf">2.30</span><span class="o">,</span> <span class="n">PM10</span><span class="o">=</span><span class="mf">4.20</span>
+<span class="mi">17</span><span class="o">:</span><span class="mi">22</span><span class="o">:</span><span class="mf">11.763</span> <span class="o">-&gt;</span> <span class="n">Loop</span>
+<span class="mi">17</span><span class="o">:</span><span class="mi">22</span><span class="o">:</span><span class="mf">42.007</span> <span class="o">-&gt;</span> <span class="n">no</span> <span class="n">error</span>
+<span class="mi">17</span><span class="o">:</span><span class="mi">22</span><span class="o">:</span><span class="mf">42.007</span> <span class="o">-&gt;</span> <span class="mi">158</span><span class="n">s</span><span class="o">:</span><span class="n">PM2</span><span class="o">.</span><span class="mi">5</span><span class="o">=</span><span class="mf">2.10</span><span class="o">,</span> <span class="n">PM10</span><span class="o">=</span><span class="mf">4.40</span>
+<span class="mi">17</span><span class="o">:</span><span class="mi">23</span><span class="o">:</span><span class="mf">14.060</span> <span class="o">-&gt;</span> <span class="n">Loop</span>
+<span class="mi">17</span><span class="o">:</span><span class="mi">23</span><span class="o">:</span><span class="mf">44.845</span> <span class="o">-&gt;</span> <span class="n">no</span> <span class="n">error</span>
+<span class="mi">17</span><span class="o">:</span><span class="mi">23</span><span class="o">:</span><span class="mf">44.845</span> <span class="o">-&gt;</span> <span class="mi">219</span><span class="n">s</span><span class="o">:</span><span class="n">PM2</span><span class="o">.</span><span class="mi">5</span><span class="o">=</span><span class="mf">2.40</span><span class="o">,</span> <span class="n">PM10</span><span class="o">=</span><span class="mf">4.30</span>
+</pre></div></p>
                 
                   
                 
@@ -1061,7 +896,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../docs-info/" title="Docs Information" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../city-node-hardware/" title="Hardware overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1070,19 +905,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Docs Information
+                Hardware overview
               </span>
             </div>
           </a>
         
         
-          <a href="../city-node-hardware/" title="Hardware overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../city-node-software/" title="Software overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Hardware overview
+                Software overview
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
