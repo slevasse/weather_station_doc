@@ -52,6 +52,8 @@ nav:
   - Node:
     - Requirements: node/city-node-requirement-specs.md
     - Hardware overview: node/city-node-hardware.md
+    - Modules:
+      - SDS1011: node/city-node-hardware-sds1011.md
     - Software overview: node/city-node-software.md
     - State machine implementation: node/city-node-fsm-implementation.md
     - State implementation:

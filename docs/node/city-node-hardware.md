@@ -1,4 +1,4 @@
-# Node Hardware
+# Node Hardware overview
 
 ## Prototyping
 In order to develop the node firmware and server software I used a breadoard prototype.
@@ -60,7 +60,7 @@ It not an arduino :) .
 
 #### BME680
 Primary sensor of the system.
-This guy could be replaced by a BME280 to cut cost (if the air quality measurement is deamed useless).
+This guy could be replaced by a BME280 to lower cost (if the air quality measurement is deamed useless).
 
 * Sense:
 	* Index of air quality (IAQ) from 0 to 500. (If I find some code to compute it...)
@@ -83,8 +83,25 @@ Particulate matter sensor.
 
 * Sense:  
 	* PM2.5 and PM10 from 0.0-999.9 μg/m3
+	* Error @ 25 °C and 50 %r.h: Max 15 % and 10 μg/m3
 	* __Unreliable for RH > 80% -->[paper](https://www.researchgate.net/publication/330544166_Performance_Assessment_of_a_Low-Cost_PM25_Sensor_for_a_near_Four-Month_Period_in_Oslo_Norway)__
 * [Datasheet](https://cdn-reichelt.de/documents/datenblatt/X200/SDS011-DATASHEET.pdf)
+* Library before tweek for samd21 arduino -> [link](https://github.com/Silvan85/Nova_SDS011)
+
+##### Work environement
+* Air pressure: 86 kPa to 110 kPa
+* Humidity
+	* Storage: 0 %r.h to 90 %r.h
+	* Operation: < 70 %r.h
+* Temperature
+	* Storage: -20 °C to 60 °C
+	* Operation: -10 °C to 50 °C
+
+##### Power:
+* Operation voltage: 5 V 
+* Current
+	* Active: 70 mA ± 10 mA (300 mW to 400mW (avg 350 mW))
+	* Sleep: < 4 mA (< 20 mW)
 
 ### BOM
 * In hindsight I totaly got ripped-off for the shipping of the RTC module. (I noticed it when doing this doc.)
