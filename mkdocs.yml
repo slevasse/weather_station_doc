@@ -67,5 +67,5 @@ nav:
   - Server:
     - Requirements and spec: server/server-requirement-specs.md 
     - Hardware: server/server-hardware.md
-    - UDP server: server/udp-server.md
-    - Web server: server/web-server.md
+    - Web server: 
+      - Setup the pi: server/pi-setup.md
