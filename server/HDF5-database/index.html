@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://slevasse.github.io/weather_station_doc/node/city-node-hardware/">
+        <link rel="canonical" href="https://slevasse.github.io/weather_station_doc/server/HDF5-database/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>Hardware overview - Weather Station Project Documentation</title>
+        <title>HDF5 database - Weather Station Project Documentation</title>
       
     
     
@@ -91,7 +91,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#node-hardware-overview" tabindex="1" class="md-skip">
+      <a href="#hdf5-database" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -117,7 +117,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Hardware overview
+                HDF5 database
               
             </span>
           
@@ -209,7 +209,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../city-node-requirement-specs/" class="md-tabs__link md-tabs__link--active">
+        <a href="../../node/city-node-requirement-specs/" class="md-tabs__link">
           Node
         </a>
       
@@ -222,7 +222,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../server/server-requirement-specs/" class="md-tabs__link">
+        <a href="../server-requirement-specs/" class="md-tabs__link md-tabs__link--active">
           Server
         </a>
       
@@ -337,12 +337,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
       Node
@@ -360,7 +358,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../city-node-requirement-specs/" title="Requirements" class="md-nav__link">
+    <a href="../../node/city-node-requirement-specs/" title="Requirements" class="md-nav__link">
       Requirements
     </a>
   </li>
@@ -370,150 +368,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Hardware overview
-      </label>
-    
-    <a href="./" title="Hardware overview" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../node/city-node-hardware/" title="Hardware overview" class="md-nav__link">
       Hardware overview
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prototyping" class="md-nav__link">
-    Prototyping
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mcus" class="md-nav__link">
-    MCUs
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#arduinot-nano-iot" class="md-nav__link">
-    Arduinot nano IOT
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nodemcu-v3" class="md-nav__link">
-    NodeMCU V3
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#esp-wroom-32" class="md-nav__link">
-    ESP-WROOM-32
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sensors" class="md-nav__link">
-    Sensors
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bme680" class="md-nav__link">
-    BME680
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ccs811" class="md-nav__link">
-    CCS811
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sds011" class="md-nav__link">
-    SDS011
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#work-environement" class="md-nav__link">
-    Work environement
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#power" class="md-nav__link">
-    Power:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bom" class="md-nav__link">
-    BOM
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -542,7 +401,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../city-node-hardware-sds1011/" title="SDS1011" class="md-nav__link">
+    <a href="../../node/city-node-hardware-sds1011/" title="SDS1011" class="md-nav__link">
       SDS1011
     </a>
   </li>
@@ -559,7 +418,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../city-node-software/" title="Software overview" class="md-nav__link">
+    <a href="../../node/city-node-software/" title="Software overview" class="md-nav__link">
       Software overview
     </a>
   </li>
@@ -571,7 +430,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../city-node-fsm-implementation/" title="State machine implementation" class="md-nav__link">
+    <a href="../../node/city-node-fsm-implementation/" title="State machine implementation" class="md-nav__link">
       State machine implementation
     </a>
   </li>
@@ -602,7 +461,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../city-node-init-state/" title="Init state" class="md-nav__link">
+    <a href="../../node/city-node-init-state/" title="Init state" class="md-nav__link">
       Init state
     </a>
   </li>
@@ -614,7 +473,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../city-node-sleep-state/" title="Sleep state" class="md-nav__link">
+    <a href="../../node/city-node-sleep-state/" title="Sleep state" class="md-nav__link">
       Sleep state
     </a>
   </li>
@@ -626,7 +485,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../city-node-measure-state/" title="Measure state" class="md-nav__link">
+    <a href="../../node/city-node-measure-state/" title="Measure state" class="md-nav__link">
       Measure state
     </a>
   </li>
@@ -638,7 +497,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../city-node-transmit-state/" title="Transmit state" class="md-nav__link">
+    <a href="../../node/city-node-transmit-state/" title="Transmit state" class="md-nav__link">
       Transmit state
     </a>
   </li>
@@ -650,7 +509,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../city-node-save-state/" title="Save state" class="md-nav__link">
+    <a href="../../node/city-node-save-state/" title="Save state" class="md-nav__link">
       Save state
     </a>
   </li>
@@ -662,7 +521,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../city-node-error-state/" title="Error state" class="md-nav__link">
+    <a href="../../node/city-node-error-state/" title="Error state" class="md-nav__link">
       Error state
     </a>
   </li>
@@ -682,10 +541,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Server
@@ -703,7 +564,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../server/server-requirement-specs/" title="Requirements and spec" class="md-nav__link">
+    <a href="../server-requirement-specs/" title="Requirements and spec" class="md-nav__link">
       Requirements and spec
     </a>
   </li>
@@ -715,7 +576,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../server/server-hardware/" title="Hardware" class="md-nav__link">
+    <a href="../server-hardware/" title="Hardware" class="md-nav__link">
       Hardware
     </a>
   </li>
@@ -725,10 +586,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
     
     <label class="md-nav__link" for="nav-3-3">
       Data server
@@ -746,7 +609,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../server/data-server-option/" title="Options" class="md-nav__link">
+    <a href="../data-server-option/" title="Options" class="md-nav__link">
       Options
     </a>
   </li>
@@ -756,11 +619,97 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../server/HDF5-database/" title="HDF5 database" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        HDF5 database
+      </label>
+    
+    <a href="./" title="HDF5 database" class="md-nav__link md-nav__link--active">
       HDF5 database
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-i-understand-from-the-hdf5-format" class="md-nav__link">
+    What I understand from the hdf5 format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-node-database-requirements" class="md-nav__link">
+    The "node" database requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-data-database-requirements" class="md-nav__link">
+    The "data" database requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#possible-organisation" class="md-nav__link">
+    Possible organisation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a" class="md-nav__link">
+    Option A
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b" class="md-nav__link">
+    Option B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-c" class="md-nav__link">
+    Option C
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -770,7 +719,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../server/HDF5-server/" title="HDF5 server" class="md-nav__link">
+    <a href="../HDF5-server/" title="HDF5 server" class="md-nav__link">
       HDF5 server
     </a>
   </li>
@@ -806,7 +755,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../server/pi-setup/" title="Setup the pi" class="md-nav__link">
+    <a href="../pi-setup/" title="Setup the pi" class="md-nav__link">
       Setup the pi
     </a>
   </li>
@@ -843,104 +792,51 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prototyping" class="md-nav__link">
-    Prototyping
+  <a href="#what-i-understand-from-the-hdf5-format" class="md-nav__link">
+    What I understand from the hdf5 format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-node-database-requirements" class="md-nav__link">
+    The "node" database requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-data-database-requirements" class="md-nav__link">
+    The "data" database requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#possible-organisation" class="md-nav__link">
+    Possible organisation
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mcus" class="md-nav__link">
-    MCUs
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#arduinot-nano-iot" class="md-nav__link">
-    Arduinot nano IOT
+  <a href="#option-a" class="md-nav__link">
+    Option A
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#nodemcu-v3" class="md-nav__link">
-    NodeMCU V3
+  <a href="#option-b" class="md-nav__link">
+    Option B
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#esp-wroom-32" class="md-nav__link">
-    ESP-WROOM-32
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sensors" class="md-nav__link">
-    Sensors
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bme680" class="md-nav__link">
-    BME680
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ccs811" class="md-nav__link">
-    CCS811
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sds011" class="md-nav__link">
-    SDS011
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#work-environement" class="md-nav__link">
-    Work environement
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#power" class="md-nav__link">
-    Power:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bom" class="md-nav__link">
-    BOM
+  <a href="#option-c" class="md-nav__link">
+    Option C
   </a>
   
 </li>
@@ -966,255 +862,117 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/slevasse/weather_station_doc/edit/master/docs/node/city-node-hardware.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/slevasse/weather_station_doc/edit/master/docs/server/HDF5-database.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="node-hardware-overview">Node Hardware overview</h1>
-<h2 id="prototyping">Prototyping</h2>
-<p>In order to develop the node firmware and server software I used a breadoard prototype.
-It is comprised of:</p>
+                <h1 id="hdf5-database">HDF5 Database</h1>
+<p>From wiki : Hierarchical Data Format (HDF) is a set of file formats (HDF4, HDF5) designed to store and organize large amounts of data. </p>
+<h2 id="what-i-understand-from-the-hdf5-format">What I understand from the hdf5 format</h2>
 <ul>
-<li>Arduino nano IOT (see bellow)</li>
-<li>Some sensors (selected based on other similar projects.)<ul>
-<li>BME680</li>
-<li>CCS811</li>
-<li>SDS011</li>
+<li>Files have the <code class="codehilite"><span class="na">.hdf5</span></code> extention</li>
+<li>An HDF5 file is a container for two kinds of objects: datasets, which are array-like collections of data, and groups, which are folder-like containers that hold datasets and other groups. <a href="http://docs.h5py.org/en/stable/quick.html#core-concepts">source</a></li>
+<li>A dataset only contains data of a certain data type</li>
+<li>Datasets can e stored contiguously (all data is stored in order on the disk in one block) or by chuncks<ul>
+<li>Chuncks are cool, they allow for compression within the .hdf5 file and to add crc32 error correction/detection</li>
 </ul>
 </li>
-<li>A SD card module + 16GB SD card<ul>
-<li>The sd card might be quite overkill but well it was cheap and I had no idea how much data I would need to store when I ordered...</li>
+<li>Metadata is attached to a dataset or groups in the form a "atributes" </li>
+<li>Apparently you can parse a hdf5 file with SQL commands <a href="https://www.hdfgroup.org/2016/06/hdfql-new-hdf-tool-speaks-sql/">see here</a></li>
+<li>Otherwise things looks like a file folder thingy.</li>
 </ul>
-</li>
-<li>A GPS module (GY-NEO6MV2)<ul>
-<li>Used for position measurement in a mobile system.</li>
-<li>Used for clock synchronisation in absence of internet access.</li>
-</ul>
-</li>
-<li>A small oled screen.<ul>
-<li>Used for debug and for user interface.</li>
-<li>Not strictly required from the requirements but I though it would be nice to see the measurement in real time.</li>
-</ul>
-</li>
-<li>A RTC module.<ul>
-<li>This was a it of a mistake since I forgot I could get the clock from the GPS...</li>
-</ul>
-</li>
-</ul>
-<h3 id="mcus">MCUs</h3>
-<p>I have three MCU for this prototype. 
-The reason is that I had a arduino nano on my desk.
-However, I want to make this into a cheap system and the arduino is FAR from cheap.
-Thus I went for a NodeMCU(ESP8266), which is quite a lot cheaper for similar specs.
-I also got its younger brother the ESP-WROOM-32 , a bit more expensive but with far more computation power + embedded bluetooth.
-I will start with the arduino and switch to the other when they get here...
-I would also like to try a few diferent MCU to see which hold best against cold temperature.</p>
-<h4 id="arduinot-nano-iot">Arduinot nano IOT</h4>
-<p>It is an arduino :) .</p>
+<h2 id="the-node-database-requirements">The "node" database requirements</h2>
+<h2 id="the-data-database-requirements">The "data" database requirements</h2>
+<p>Here I list what goes in the database.
+Depending how I will organise things, the field given bellow can end up as filename, header info or data.</p>
 <ul>
-<li>SAMD21 Cortex®-M0+ 32bit low power ARM MCU<ul>
-<li><a href="https://content.arduino.cc/assets/mkr-microchip_samd21_family_full_datasheet-ds40001882d.pdf">Datasheet</a></li>
+<li>Unique node ID : A number given (hardcoded in the firmware) to each node in order to identify them. (You can see it as a "key")</li>
+<li>Node firmware version : The version of the firmware used in</li>
 </ul>
-</li>
-<li>RF: u-blox NINA-W102<ul>
-<li><a href="https://content.arduino.cc/assets/Arduino_NINA-W10_DataSheet_%28UBX-17065507%29.pdf">Datasheet</a></li>
-</ul>
-</li>
-<li>IMU: LSM6DS3<ul>
-<li><a href="https://content.arduino.cc/assets/st_imu_lsm6ds3_datasheet.pdf">Datasheet</a></li>
-</ul>
-</li>
-<li>Crypto: ATECC608A<ul>
-<li><a href="https://content.arduino.cc/assets/microchip_atecc608a_cryptoauthentication_device_summary_datasheet-DS40001977B.pdf">Datasheet</a></li>
-</ul>
-</li>
-</ul>
-<p><img alt=" " src="https://content.arduino.cc/assets/Pinout-NANO33IoT_latest.png" /></p>
-<h4 id="nodemcu-v3">NodeMCU V3</h4>
-<p>It not an arduino :) .</p>
+<h2 id="possible-organisation">Possible organisation</h2>
+<p>From most flexible to least flexible. or from least easy to use to easiest to use.
+Dataset shall by backed up once a day.</p>
+<h3 id="option-a">Option A</h3>
 <ul>
-<li>ESP8266 does it all.<ul>
-<li><a href="https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf">Datasheet</a></li>
-</ul>
-</li>
-</ul>
-<p><img alt="" src="../img/NodeMCU_pinout.png" /></p>
-<h4 id="esp-wroom-32">ESP-WROOM-32</h4>
-<ul>
-<li><a href="https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32d_esp32-wroom-32u_datasheet_en.pdf">Datasheet</a>
-<img alt="" src="../img/esp32.jpg" /></li>
-</ul>
-<h3 id="sensors">Sensors</h3>
-<h4 id="bme680">BME680</h4>
-<p>Primary sensor of the system.
-This guy could be replaced by a BME280 to lower cost (if the air quality measurement is deamed useless).</p>
-<ul>
-<li>
-<p>Sense:</p>
-<ul>
-<li>Index of air quality (IAQ) from 0 to 500. (If I find some code to compute it...)</li>
-<li>Temperature from -40 °C to 86 °C ±1 °C.</li>
-<li>Pressure from 300 to 1100 hPa ±0.6 hPa.</li>
-<li>humidity from 0 to 100 %r.H ±3 %r.H.<ul>
-<li>Valid for 0°C to 65°C.</li>
+<li>Fixed Nodes(group), mobile node(group) (diferent groups of nodes..)<ul>
+<li>node1(group), node2(group) etc.. (each node has atribute corresponding to itself (location, fw version, hw version...))<ul>
+<li>SensorA(dataset), SensorB(dataset), Timestamp(dataset) (a dataset per sensor (1 x inf) shape) (a timestamp dataset of (1 x inf) shape to store the time and date at the node for each measurement)<ul>
+<li>Each entry in a dataset correspond to a single measurement cycle performed by the node.</li>
+<li>Each dataset has atributes like:<ul>
+<li>Sensor name/model</li>
+<li>FW</li>
+<li>Type of data stored (temp, pressure, etc..))</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<p><a href="https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme680-ds001.pdf">Datasheet</a></p>
-</li>
-</ul>
-<h4 id="ccs811">CCS811</h4>
-<ul>
-<li>Sense:<ul>
-<li>equivalent CO2 (eCO2) from 400ppm up to 29206ppm.</li>
-<li>equivalent Total Volatile Organic Compound (eTVOC) from 0ppb up to 32768ppb.</li>
-<li>Can include a temperature and humidity compensation.</li>
-</ul>
-</li>
-<li><a href="https://www.mouser.fr/datasheet/2/588/CCS811_DS000459_7-00-1594304.pdf">Datasheet</a></li>
-</ul>
-<h4 id="sds011">SDS011</h4>
-<p>Particulate matter sensor.</p>
-<ul>
-<li>Sense:  <ul>
-<li>PM2.5 and PM10 from 0.0-999.9 μg/m3</li>
-<li>Error @ 25 °C and 50 %r.h: Max 15 % and 10 μg/m3</li>
-<li><strong>Unreliable for RH &gt; 80% &rarr;<a href="https://www.researchgate.net/publication/330544166_Performance_Assessment_of_a_Low-Cost_PM25_Sensor_for_a_near_Four-Month_Period_in_Oslo_Norway">paper</a></strong></li>
-</ul>
-</li>
-<li><a href="https://cdn-reichelt.de/documents/datenblatt/X200/SDS011-DATASHEET.pdf">Datasheet</a></li>
-<li>Library before tweek for samd21 arduino -&gt; <a href="https://github.com/Silvan85/Nova_SDS011">link</a></li>
-</ul>
-<h5 id="work-environement">Work environement</h5>
-<ul>
-<li>Air pressure: 86 kPa to 110 kPa</li>
-<li>Humidity<ul>
-<li>Storage: 0 %r.h to 90 %r.h</li>
-<li>Operation: &lt; 70 %r.h</li>
-</ul>
-</li>
-<li>Temperature<ul>
-<li>Storage: -20 °C to 60 °C</li>
-<li>Operation: -10 °C to 50 °C</li>
 </ul>
 </li>
 </ul>
-<h5 id="power">Power:</h5>
-<ul>
-<li>Operation voltage: 5 V </li>
-<li>Current<ul>
-<li>Active: 70 mA ± 10 mA (300 mW to 400mW (avg 350 mW))</li>
-<li>Sleep: &lt; 4 mA (&lt; 20 mW)</li>
-</ul>
 </li>
 </ul>
-<h3 id="bom">BOM</h3>
-<ul>
-<li>In hindsight I totaly got ripped-off for the shipping of the RTC module. (I noticed it when doing this doc.)</li>
-<li>The total might be a bit off I rounded some values. </li>
-</ul>
+<h3 id="option-b">Option B</h3>
+<p>Same as above BUT instead of one dataset per sensor we have one dataset per node.
+The dataset is of 2D shape with 1D for each sensor type + time (cols) and 1D for the data collected by the sensor at time T.
+The dataset would looks like :</p>
 <table>
 <thead>
 <tr>
-<th>Part Name</th>
-<th>Type</th>
-<th>Unit Price (€)</th>
-<th>Shipping cost (€)</th>
-<th>Merchant</th>
+<th>Time</th>
+<th>temp</th>
+<th>pressure</th>
+<th>humid</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Arduino nano IOT</td>
-<td>MCU</td>
-<td>18 + 4.15</td>
-<td>5.5</td>
-<td><a href="https://store.arduino.cc/arduino-nano-33-iot-with-headers">arduino store</a></td>
+<td>2020-05-03-20-04-27</td>
+<td>12</td>
+<td>1000</td>
+<td>45</td>
 </tr>
 <tr>
-<td>NodeMcu V3</td>
-<td>MCU</td>
-<td>1.92</td>
-<td>0.6</td>
-<td><a href="https://fr.aliexpress.com/item/32665100123.html?spm=a2g0s.9042311.0.0.27426c37SSNlwU">aliexpress</a></td>
+<td>2020-05-03-20-24-27</td>
+<td>11</td>
+<td>989</td>
+<td>42</td>
 </tr>
+</tbody>
+</table>
+<p>With the header given as attribute.
+The time would have to be given as a epoch type thing since only one dtype can be used by dataset.</p>
+<h3 id="option-c">Option C</h3>
+<p>ALL the data is stored in a single dataset </p>
+<table>
+<thead>
 <tr>
-<td>ESP-WROOM-32</td>
-<td>MCU</td>
-<td>3.5</td>
-<td>2</td>
-<td><a href="https://fr.aliexpress.com/item/32665100123.html?spm=a2g0s.9042311.0.0.27426c37SSNlwU">aliexpress</a></td>
+<th>Node id</th>
+<th>Time</th>
+<th>temp</th>
+<th>pressure</th>
+<th>humid</th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td>WAVGAT GY-NEO6MV2</td>
-<td>GPS module</td>
-<td>2.92</td>
-<td>0.5</td>
-<td><a href="https://fr.aliexpress.com/item/32836015224.html?spm=a2g0s.9042311.0.0.27426c37SSNlwU">aliexpress</a></td>
-</tr>
-<tr>
-<td>WAVGAT Micro-SD card</td>
-<td>SD card module</td>
-<td>0.36</td>
-<td>0.5</td>
-<td><a href="https://fr.aliexpress.com/item/32523546123.html?spm=a2g0s.9042311.0.0.27426c37SSNlwU">aliexpress</a></td>
-</tr>
-<tr>
-<td>DS3231 AT24C32 IIC</td>
-<td>RTC module</td>
-<td>0.92</td>
-<td>4</td>
-<td><a href="https://fr.aliexpress.com/item/2037934408.html?spm=a2g0s.9042311.0.0.27426c37SSNlwU">aliexpress</a></td>
-</tr>
-<tr>
-<td>Nova PM SDS011</td>
-<td>PM sensor</td>
-<td>17.38</td>
-<td>0</td>
-<td><a href="https://fr.aliexpress.com/item/32617788139.html?spm=a2g0s.9042311.0.0.27426c37SSNlwU">aliexpress</a></td>
-</tr>
-<tr>
-<td>BME680</td>
-<td>TPH + gas sensor</td>
-<td>7.84</td>
-<td>2</td>
-<td><a href="https://fr.aliexpress.com/item/32961416338.html?spm=a2g0s.9042311.0.0.27426c37SSNlwU">aliexpress</a></td>
-</tr>
-<tr>
-<td>CCS811</td>
-<td>tcov/eCO2 sensor</td>
-<td>5.27</td>
-<td>2</td>
-<td><a href="https://fr.aliexpress.com/item/33058004405.html?spm=a2g0s.9042311.0.0.27426c37SSNlwU">aliexpress</a></td>
-</tr>
-<tr>
-<td>SanDisk A1 16GB</td>
-<td>16GB SD card</td>
-<td>3.5</td>
 <td>1</td>
-<td><a href="https://fr.aliexpress.com/item/32984767921.html?spm=a2g0s.9042311.0.0.27426c37SSNlwU">aliexpress</a></td>
+<td>2020-05-03-20-04-27</td>
+<td>12</td>
+<td>1000</td>
+<td>45</td>
 </tr>
 <tr>
-<td>0.96" oled screen</td>
-<td>oled screen</td>
-<td>1.6</td>
-<td>0.9</td>
-<td><a href="https://fr.aliexpress.com/item/32896971385.html?spm=a2g0s.9042311.0.0.27426c37SSNlwU">aliexpress</a></td>
+<td>1</td>
+<td>2020-05-03-20-24-27</td>
+<td>11</td>
+<td>989</td>
+<td>42</td>
 </tr>
 <tr>
-<td>USB charger 10W</td>
-<td>USB charger</td>
-<td>0.96</td>
-<td>0.7</td>
-<td><a href="https://fr.aliexpress.com/item/33047898868.html?spm=a2g0s.9042311.0.0.27426c37SSNlwU">aliexpress</a></td>
-</tr>
-<tr>
-<td>Total</td>
-<td></td>
-<td>67.86</td>
-<td>19.2</td>
-<td></td>
+<td>3</td>
+<td>2020-05-03-20-34-27</td>
+<td>17</td>
+<td>967</td>
+<td>12</td>
 </tr>
 </tbody>
 </table>
@@ -1239,7 +997,7 @@ This guy could be replaced by a BME280 to lower cost (if the air quality measure
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../city-node-requirement-specs/" title="Requirements" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../data-server-option/" title="Options" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1248,19 +1006,19 @@ This guy could be replaced by a BME280 to lower cost (if the air quality measure
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Requirements
+                Options
               </span>
             </div>
           </a>
         
         
-          <a href="../city-node-hardware-sds1011/" title="SDS1011" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../HDF5-server/" title="HDF5 server" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                SDS1011
+                HDF5 server
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
