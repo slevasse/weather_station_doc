@@ -67,5 +67,9 @@ nav:
   - Server:
     - Requirements and spec: server/server-requirement-specs.md 
     - Hardware: server/server-hardware.md
+    - Data server:
+      - Options: server/data-server-option.md
+      - HDF5 database: server/HDF5-database.md
+      - HDF5 server: server/HDF5-server.md
     - Web server: 
       - Setup the pi: server/pi-setup.md
