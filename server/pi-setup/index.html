@@ -631,8 +631,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../HDF5-server/" title="HDF5 server" class="md-nav__link">
-      HDF5 server
+    <a href="../data-server/" title="Data server" class="md-nav__link">
+      Data server
     </a>
   </li>
 
@@ -717,6 +717,67 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#install-dependencies" class="md-nav__link">
+    Install dependencies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-build-latest-version" class="md-nav__link">
+    python (build latest version)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pip" class="md-nav__link">
+    PIP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    Git
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-python-dep" class="md-nav__link">
+    other python dep
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numpy" class="md-nav__link">
+    Numpy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#h5py" class="md-nav__link">
+    h5py
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#install-the-lamp-server" class="md-nav__link">
     Install the LAMP server
   </a>
@@ -733,6 +794,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-wordpress" class="md-nav__link">
+    Install Wordpress
+  </a>
   
 </li>
       
@@ -799,6 +867,67 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#install-dependencies" class="md-nav__link">
+    Install dependencies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-build-latest-version" class="md-nav__link">
+    python (build latest version)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pip" class="md-nav__link">
+    PIP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    Git
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-python-dep" class="md-nav__link">
+    other python dep
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numpy" class="md-nav__link">
+    Numpy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#h5py" class="md-nav__link">
+    h5py
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#install-the-lamp-server" class="md-nav__link">
     Install the LAMP server
   </a>
@@ -815,6 +944,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-wordpress" class="md-nav__link">
+    Install Wordpress
+  </a>
   
 </li>
       
@@ -838,13 +974,13 @@
                 
                 
                 <h1 id="setup-the-pi">Setup the Pi</h1>
-<h3 id="pi-maintenance">Pi maintenance</h3>
+<h2 id="pi-maintenance">Pi maintenance</h2>
 <div class="codehilite"><pre><span></span>sudo apt-get update
 sudo apt-get upgrade
 sudo reboot
 </pre></div>
 
-<h3 id="headless-ssh-connection">Headless SSH connection</h3>
+<h2 id="headless-ssh-connection">Headless SSH connection</h2>
 <p><a href="https://howchoo.com/g/ndy1zte2yjn/how-to-set-up-wifi-on-your-raspberry-pi-without-ethernet">Source</a></p>
 <ol>
 <li>In the OS SD card</li>
@@ -863,12 +999,54 @@ sudo reboot
 <li>Connect to the Pi via ssh <code class="codehilite"><span class="err">ssh -Y pi@raspberrypi</span></code></li>
 <li>The default password is <code class="codehilite"><span class="err">raspberrypi</span></code></li>
 </ol>
-<h3 id="change-the-default-password-and-create-a-new-user">Change the default password and create a new user</h3>
+<h2 id="change-the-default-password-and-create-a-new-user">Change the default password and create a new user</h2>
 <ul>
 <li>Once connected over ssh, open the software config tool <code class="codehilite"><span class="err">sudo raspi-config</span></code></li>
 <li>Change the password.</li>
 </ul>
-<h3 id="install-the-lamp-server">Install the LAMP server</h3>
+<h2 id="install-dependencies">Install dependencies</h2>
+<h3 id="python-build-latest-version">python (build latest version)</h3>
+<div class="codehilite"><pre><span></span>apt install libffi-dev libbz2-dev liblzma-dev libsqlite3-dev libncurses5-dev libgdbm-dev zlib1g-dev libreadline-dev libssl-dev tk-dev build-essential libncursesw5-dev libc6-dev openssl
+wget https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tar.xz
+tar xf Python-3.8.2.tar.xz
+rm Python-3.8.2.tar.xz
+<span class="nb">cd</span> Python-3.8.2
+./configure --enable-optimizations
+make -j -l <span class="m">4</span>
+sudo make altinstall
+sudo nano ~/.bashrc
+<span class="nb">alias</span> <span class="nv">python</span><span class="o">=</span><span class="s1">&#39;python3.8&#39;</span>
+</pre></div>
+
+<h3 id="pip">PIP</h3>
+<div class="codehilite"><pre><span></span>curl -O https://bootstrap.pypa.io/get-pip.py
+sudo python3.6 get-pip.py
+</pre></div>
+
+<h3 id="git">Git</h3>
+<ul>
+<li>Install <code class="codehilite"><span class="err">sudo apt install -y git</span></code></li>
+<li>Setup ssh key
+<div class="codehilite"><pre><span></span>mkdir -p <span class="nv">$HOME</span>/.ssh 
+chmod <span class="m">0700</span> <span class="nv">$HOME</span>/.ssh
+ssh-keygen
+cat ~/.ssh/id_rsa.pub
+</pre></div></li>
+<li>copy that line and add to github</li>
+</ul>
+<h3 id="other-python-dep">other python dep</h3>
+<h4 id="numpy">Numpy</h4>
+<p><code class="codehilite"><span class="err">pip install numpy</span></code></p>
+<h4 id="h5py">h5py</h4>
+<div class="codehilite"><pre><span></span>sudo pip install cython
+sudo apt-get install libhdf5-dev
+sudo pip install h5py
+</pre></div>
+
+<ul>
+<li>A note on <code class="codehilite"><span class="err">libhdf5-dev</span></code> it is a version that can support parallel IO. So I should be able to write to a hdf5 file while at the "same" time read with the webb server.. <a href="https://packages.debian.org/buster/libhdf5-dev">source</a></li>
+</ul>
+<h2 id="install-the-lamp-server">Install the LAMP server</h2>
 <p><a href="https://randomnerdtutorials.com/raspberry-pi-apache-mysql-php-lamp-server/">Source</a></p>
 <ol>
 <li><code class="codehilite"><span class="err">sudo apt update</span></code></li>
@@ -891,11 +1069,18 @@ sudo reboot
 <li>Move the files to the server folder <code class="codehilite"><span class="err">sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin</span></code></li>
 <li>login phpmyadmin @ <code class="codehilite"><span class="c">http://SERVERIP/phpmyadmin</span></code> , use the username: admin and the password you set before.</li>
 </ol>
-<h4 id="test-the-install">Test the install</h4>
+<h3 id="test-the-install">Test the install</h3>
 <ol>
 <li>Type <code class="codehilite"><span class="err">hostname -I</span></code> in a terminal of the pi to get its IP address</li>
 <li>In a webbrowser type connected to the local network type the IP you got from the previous step e.g.<code class="codehilite"><span class="err">192.168.43.243</span></code></li>
 </ol>
+<h2 id="install-wordpress">Install Wordpress</h2>
+<p><a href="https://samhobbs.co.uk/2014/02/how-to-install-wordpress-on-a-raspberry-pi">source</a>
+<div class="codehilite"><pre><span></span>wget http://wordpress.org/latest.tar.gz
+tar -xzvf latest.tar.gz
+<span class="nb">cd</span> wordpress
+sudo cp -r * /var/www/
+</pre></div></p>
                 
                   
                 
@@ -917,7 +1102,7 @@ sudo reboot
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../HDF5-server/" title="HDF5 server" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../data-server/" title="Data server" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -926,7 +1111,7 @@ sudo reboot
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                HDF5 server
+                Data server
               </span>
             </div>
           </a>
