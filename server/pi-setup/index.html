@@ -407,6 +407,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../node/city-node-hardware-bme680/" title="BME860" class="md-nav__link">
+      BME860
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../node/city-node-hardware-ccs811/" title="CCS811" class="md-nav__link">
+      CCS811
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -649,27 +673,6 @@
   
 
 
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" checked>
-    
-    <label class="md-nav__link" for="nav-3-4">
-      Web server
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-4">
-        Web server
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-  
-
-
   <li class="md-nav__item md-nav__item--active">
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
@@ -767,6 +770,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#paho" class="md-nav__link">
+    Paho
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -774,6 +784,27 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-the-mosquitto-brocker" class="md-nav__link">
+    Setup the Mosquitto brocker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mosquitto-mqtt-server" class="md-nav__link">
+    Mosquitto MQTT server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-to-have-a-static-ip-address" class="md-nav__link">
+    Setup to have a static IP address
+  </a>
   
 </li>
       
@@ -812,11 +843,6 @@
   
 </nav>
     
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
         
@@ -917,6 +943,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#paho" class="md-nav__link">
+    Paho
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -924,6 +957,27 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-the-mosquitto-brocker" class="md-nav__link">
+    Setup the Mosquitto brocker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mosquitto-mqtt-server" class="md-nav__link">
+    Mosquitto MQTT server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-to-have-a-static-ip-address" class="md-nav__link">
+    Setup to have a static IP address
+  </a>
   
 </li>
       
@@ -1003,6 +1057,7 @@ sudo reboot
 <ul>
 <li>Once connected over ssh, open the software config tool <code class="codehilite"><span class="err">sudo raspi-config</span></code></li>
 <li>Change the password.</li>
+<li>Also change the boot option to make sure you autolog with the pi user</li>
 </ul>
 <h2 id="install-dependencies">Install dependencies</h2>
 <h3 id="python-build-latest-version">python (build latest version)</h3>
@@ -1036,16 +1091,39 @@ cat ~/.ssh/id_rsa.pub
 </ul>
 <h3 id="other-python-dep">other python dep</h3>
 <h4 id="numpy">Numpy</h4>
-<p><code class="codehilite"><span class="err">pip install numpy</span></code></p>
+<p><code class="codehilite"><span class="err">pip install numpy</span></code>
+<code class="codehilite"><span class="err">sudo nano ~/.bashrc</span></code>
+<code class="codehilite"><span class="err">/home/pi/.local/bin</span></code></p>
 <h4 id="h5py">h5py</h4>
-<div class="codehilite"><pre><span></span>sudo pip install cython
+<p><div class="codehilite"><pre><span></span>sudo pip install cython
 sudo apt-get install libhdf5-dev
 sudo pip install h5py
 </pre></div>
-
+* A note on <code class="codehilite"><span class="err">libhdf5-dev</span></code> it is a version that can support parallel IO. So I should be able to write to a hdf5 file while at the "same" time read with the webb server.. <a href="https://packages.debian.org/buster/libhdf5-dev">source</a></p>
+<h4 id="paho">Paho</h4>
+<p><code class="codehilite"><span class="err">sudo pip install paho-mqtt</span></code></p>
+<h2 id="setup-the-mosquitto-brocker">Setup the Mosquitto brocker</h2>
+<p>The mosquitto broker is light weight and simple to setup. -&gt; Good for my rpi4.
+<a href="https://randomnerdtutorials.com/how-to-install-mosquitto-broker-on-raspberry-pi/">source</a></p>
 <ul>
-<li>A note on <code class="codehilite"><span class="err">libhdf5-dev</span></code> it is a version that can support parallel IO. So I should be able to write to a hdf5 file while at the "same" time read with the webb server.. <a href="https://packages.debian.org/buster/libhdf5-dev">source</a></li>
+<li>Install <code class="codehilite"><span class="err">sudo apt install -y mosquitto mosquitto-clients</span></code> </li>
+<li>enable at boot <code class="codehilite"><span class="err">sudo systemctl enable mosquitto.service</span></code></li>
 </ul>
+<h2 id="mosquitto-mqtt-server">Mosquitto MQTT server</h2>
+<ul>
+<li>Reboot the server <code class="codehilite"><span class="err">sudo service mosquitto restart</span></code></li>
+</ul>
+<h2 id="setup-to-have-a-static-ip-address">Setup to have a static IP address</h2>
+<p><a href="https://thepihut.com/blogs/raspberry-pi-tutorials/how-to-give-your-raspberry-pi-a-static-ip-address-update">source</a>
+* I used .43. because it is on my phone router, probably need to change that when hooking to my home router.
+<div class="codehilite"><pre><span></span>sudo nano /etc/dhcpcd.conf
+
+interface wlan0
+
+static <span class="nv">ip_address</span><span class="o">=</span><span class="m">192</span>.168.43.243
+static <span class="nv">routers</span><span class="o">=</span><span class="m">192</span>.168.43.1
+static <span class="nv">domain_name_servers</span><span class="o">=</span><span class="m">192</span>.168.43.1
+</pre></div></p>
 <h2 id="install-the-lamp-server">Install the LAMP server</h2>
 <p><a href="https://randomnerdtutorials.com/raspberry-pi-apache-mysql-php-lamp-server/">Source</a></p>
 <ol>

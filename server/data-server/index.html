@@ -407,6 +407,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../node/city-node-hardware-bme680/" title="BME860" class="md-nav__link">
+      BME860
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../node/city-node-hardware-ccs811/" title="CCS811" class="md-nav__link">
+      CCS811
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -674,15 +698,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#python-development" class="md-nav__link">
-    Python development
+  <a href="#mosquitto-mqtt-server" class="md-nav__link">
+    Mosquitto MQTT server
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mosquitto-mqtt-server" class="md-nav__link">
-    Mosquitto MQTT server
+  <a href="#run-the-server-at-boot" class="md-nav__link">
+    Run the server at boot
   </a>
   
 </li>
@@ -708,34 +732,10 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
-    
-    <label class="md-nav__link" for="nav-3-4">
-      Web server
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-4">
-        Web server
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
   <li class="md-nav__item">
     <a href="../pi-setup/" title="Setup the pi" class="md-nav__link">
       Setup the pi
     </a>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
         
@@ -779,15 +779,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#python-development" class="md-nav__link">
-    Python development
+  <a href="#mosquitto-mqtt-server" class="md-nav__link">
+    Mosquitto MQTT server
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mosquitto-mqtt-server" class="md-nav__link">
-    Mosquitto MQTT server
+  <a href="#run-the-server-at-boot" class="md-nav__link">
+    Run the server at boot
   </a>
   
 </li>
@@ -836,20 +836,16 @@ The backend will connect as a client to the broker using the <a href="https://io
 <li>Install <code class="codehilite"><span class="err">sudo apt install -y mosquitto mosquitto-clients</span></code> </li>
 <li>enable at boot <code class="codehilite"><span class="err">sudo systemctl enable mosquitto.service</span></code></li>
 </ul>
-<h2 id="python-development">Python development</h2>
-<ul>
-<li><code class="codehilite"><span class="err">cd</span></code></li>
-<li><code class="codehilite"><span class="err">git clone therepo</span></code></li>
-<li>create a virtual env for the dev <code class="codehilite"><span class="err">conda create -n mqtt python=3</span></code></li>
-<li>activate mqtt <code class="codehilite"><span class="err">source activate mqtt</span></code></li>
-<li>install the dependencies
-<div class="codehilite"><pre><span></span>
-</pre></div></li>
-</ul>
 <h2 id="mosquitto-mqtt-server">Mosquitto MQTT server</h2>
 <ul>
 <li>Reboot the server <code class="codehilite"><span class="err">sudo service mosquitto restart</span></code></li>
 </ul>
+<h2 id="run-the-server-at-boot">Run the server at boot</h2>
+<p><a href="https://www.raspberrypi.org/documentation/linux/usage/rc-local.md">source</a>
+* open the rc.local file <code class="codehilite"><span class="err">sudo nano /etc/rc.local</span></code>
+* add this line <code class="codehilite"><span class="err">python3.8 /home/pi/mqtt2hdf5_server/python-backend/start_data_server.py &amp;</span></code> before the <code class="codehilite"><span class="err">exit 0</span></code> statement
+    * The <code class="codehilite"><span class="err">&amp;</span></code> run the command in a new thread.. to avoid locking up the pi at boot
+* rc.local run as root, make sure the command used in there run as root user (e.g. <code class="codehilite"><span class="err">sudo -i</span></code> then whatever command..)</p>
                 
                   
                 
