@@ -25,16 +25,13 @@ The mosquitto broker is light weight and simple to setup. -> Good for my rpi4.
 * Install `sudo apt install -y mosquitto mosquitto-clients` 
 * enable at boot `sudo systemctl enable mosquitto.service`
 
-## Python development
-* `cd`
-* `git clone therepo`
-* create a virtual env for the dev `conda create -n mqtt python=3`
-* activate mqtt `source activate mqtt`
-* install the dependencies
-```shell
-
-```
-
-
 ## Mosquitto MQTT server
 * Reboot the server `sudo service mosquitto restart`
+
+
+## Run the server at boot
+[source](https://www.raspberrypi.org/documentation/linux/usage/rc-local.md)
+* open the rc.local file `sudo nano /etc/rc.local`
+* add this line `python3.8 /home/pi/mqtt2hdf5_server/python-backend/start_data_server.py &` before the `exit 0` statement
+	* The `&` run the command in a new thread.. to avoid locking up the pi at boot
+* rc.local run as root, make sure the command used in there run as root user (e.g. `sudo -i` then whatever command..)

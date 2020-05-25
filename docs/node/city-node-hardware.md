@@ -61,6 +61,7 @@ It not an arduino :) .
 #### BME680
 Primary sensor of the system.
 This guy could be replaced by a BME280 to lower cost (if the air quality measurement is deamed useless).
+An additional library used to get the full potential of the system is availiable here (source)[https://www.bosch-sensortec.com/software-tools/software/bsec/].
 
 * Sense:
 	* Index of air quality (IAQ) from 0 to 500. (If I find some code to compute it...)
@@ -77,6 +78,7 @@ This guy could be replaced by a BME280 to lower cost (if the air quality measure
 	* equivalent Total Volatile Organic Compound (eTVOC) from 0ppb up to 32768ppb.
 	* Can include a temperature and humidity compensation.
 * [Datasheet](https://www.mouser.fr/datasheet/2/588/CCS811_DS000459_7-00-1594304.pdf)
+* [Library](https://github.com/adafruit/Adafruit_CCS811)
 
 #### SDS011
 Particulate matter sensor.

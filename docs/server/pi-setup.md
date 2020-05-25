@@ -30,6 +30,7 @@ network={
 ## Change the default password and create a new user
 * Once connected over ssh, open the software config tool `sudo raspi-config`
 * Change the password.
+* Also change the boot option to make sure you autolog with the pi user
 
 ## Install dependencies
 ### python (build latest version)
@@ -67,14 +68,43 @@ cat ~/.ssh/id_rsa.pub
 ### other python dep
 #### Numpy
 `pip install numpy`
+`sudo nano ~/.bashrc`
+`/home/pi/.local/bin`
+
 #### h5py
 ``` shell
 sudo pip install cython
 sudo apt-get install libhdf5-dev
 sudo pip install h5py
 ```
-
 * A note on `libhdf5-dev` it is a version that can support parallel IO. So I should be able to write to a hdf5 file while at the "same" time read with the webb server.. [source](https://packages.debian.org/buster/libhdf5-dev)
+
+#### Paho
+`sudo pip install paho-mqtt`
+
+## Setup the Mosquitto brocker
+The mosquitto broker is light weight and simple to setup. -> Good for my rpi4.
+[source](https://randomnerdtutorials.com/how-to-install-mosquitto-broker-on-raspberry-pi/)
+
+* Install `sudo apt install -y mosquitto mosquitto-clients` 
+* enable at boot `sudo systemctl enable mosquitto.service`
+
+## Mosquitto MQTT server
+* Reboot the server `sudo service mosquitto restart`
+
+
+## Setup to have a static IP address
+[source](https://thepihut.com/blogs/raspberry-pi-tutorials/how-to-give-your-raspberry-pi-a-static-ip-address-update)
+* I used .43. because it is on my phone router, probably need to change that when hooking to my home router.
+```shell
+sudo nano /etc/dhcpcd.conf
+
+interface wlan0
+
+static ip_address=192.168.43.243
+static routers=192.168.43.1
+static domain_name_servers=192.168.43.1
+```
 
 ## Install the LAMP server
 [Source](https://randomnerdtutorials.com/raspberry-pi-apache-mysql-php-lamp-server/)

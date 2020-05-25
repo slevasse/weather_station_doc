@@ -54,6 +54,8 @@ nav:
     - Hardware overview: node/city-node-hardware.md
     - Modules:
       - SDS1011: node/city-node-hardware-sds1011.md
+      - BME860: node/city-node-hardware-bme680.md
+      - CCS811: node/city-node-hardware-ccs811.md
     - Software overview: node/city-node-software.md
     - State machine implementation: node/city-node-fsm-implementation.md
     - State implementation:
@@ -71,5 +73,5 @@ nav:
       - Options: server/data-server-option.md
       - HDF5 database: server/HDF5-database.md
       - Data server: server/data-server.md
-    - Web server: 
-      - Setup the pi: server/pi-setup.md
+    #- Web server: 
+    - Setup the pi: server/pi-setup.md
